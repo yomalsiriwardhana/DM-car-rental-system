@@ -1,0 +1,2533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Easy Car | Admin Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Full Stack Software Developer In Sri Lanka">
+    <meta name="author" content="Pasan Pahasara">
+    <meta name="owner" content="Pasan Pahasara">
+    <link rel="shortcut icon" href="../assets/img/title.png">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&family=Ubuntu&display=swap"
+          rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dripicons/2.0.0/webfont.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dripicons/2.0.0/webfont.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../assets/css/vendor/app.min.css" id="light-style">
+
+    <style>
+        * {
+            font-family: 'Ubuntu', sans-serif;
+        }
+
+        .card-radius {
+            border-radius: 1.5rem;
+        }
+
+        .dash-icon {
+            background: var(--icon-card-bg, var(--columbia-blue));
+            color: var(--icon-card-color, var(--carolina-blue));
+            height: 50px;
+            width: 50px;
+            display: grid;
+            place-items: center;
+            border-radius: 14px;
+            margin-bottom: 20px;
+        }
+
+        .dash-icon ion-icon {
+            font-size: 26px;
+            --ionicon-stroke-width: 45px;
+        }
+
+        .get-start-card .card-icon ion-icon {
+            font-size: 26px;
+            --ionicon-stroke-width: 45px;
+        }
+
+        .icon-1 {
+            --icon-card-bg: #F6D5E6;
+            --icon-card-color: #D23787;
+        }
+
+        .icon-2 {
+            --icon-card-bg: #CEEAFD;
+            --icon-card-color: #6D76E9;
+        }
+
+        .icon-3 {
+            --icon-card-bg: #D5F0E4;
+            --icon-card-color: #29B372;
+        }
+
+        .icon-4 {
+            --icon-card-bg: #E7DEF7;
+            --icon-card-color: #8050D3;
+        }
+
+        .icon-5 {
+            --icon-card-bg: #f1e7c5;
+            --icon-card-color: #e5b61e;
+        }
+    </style>
+</head>
+<body class="loading"
+      data-layout-config='{"leftSideBarTheme":"dark","layoutBoxed":false, "leftSidebarCondensed":false, "leftSidebarScrollable":false,"darkMode":false, "showRightSidebarOnStart": true}'>
+<!-- Start Sidebar Wrapper-->
+<section class="wrapper">
+    <!-- Start Sidebar Content-->
+    <div class="leftside-menu">
+        <!-- light logo start -->
+        <a href="#" class="logo text-center logo-light">
+                    <span class="logo-lg mt-lg-4" style="line-height: 0.5rem;position: relative">
+                        <img src="../assets/img/favicon.png" alt="" style="width: 7rem;"><br>
+                        <span style="font-size: 20px; font-weight: bolder; color: #f0f0f0;">EᗩSY</span> car rental</span>
+            <span class="logo-sm">
+                        <img src="../assets/img/favicon.png" alt="" height="17">
+                    </span>
+        </a>
+        <!-- light logo end -->
+
+        <!-- dark logo start -->
+        <!--        <a href="#" class="logo text-center logo-dark">-->
+        <!--                    <span class="logo-lg">-->
+        <!--                        <img src="" alt="" height="16">-->
+        <!--                    </span>-->
+        <!--            <span class="logo-sm">-->
+        <!--                        <img src="" alt="" height="16">-->
+        <!--                    </span>-->
+        <!--        </a>-->
+        <!-- dark logo end -->
+
+        <!-- slideMenu start -->
+        <div class="h-100 pt-lg-1" id="leftside-menu-container" data-simplebar="">
+            <ul class="side-nav">
+
+                <li class="side-nav-title side-nav-item pt-lg-4">Navigation</li>
+
+                <li class="side-nav-item">
+                    <a data-bs-toggle="collapse" href="#" id="LinkAdminDashboard" aria-expanded="false"
+                       aria-controls="sidebarDashboards" class="side-nav-link">
+                        <i class="uil uil-estate"></i>
+                        <span> Dashboards </span>
+                    </a>
+                </li>
+
+                <li class="side-nav-item">
+                    <a href="#" id="LinkManageCar" class="side-nav-link">
+                        <i class="uil-car"></i>
+                        <span> Manage Car </span>
+                    </a>
+                </li>
+
+                <li class="side-nav-item">
+                    <a href="#" id="LinkManageDriver" class="side-nav-link">
+                        <i class="uil-user-plus"></i>
+                        <span> Manage Driver </span>
+                    </a>
+                </li>
+
+                <li class="side-nav-item">
+                    <a href="#" id="LinkManageCustomer" class="side-nav-link">
+                        <i class="uil-users-alt"></i>
+                        <span> Manage Customer </span>
+                    </a>
+                </li>
+
+                <li class="side-nav-item">
+                    <a href="#" id="LinkUserRequest" class="side-nav-link">
+                        <i class="uil-repeat"></i>
+                        <span> Rental Returns </span>
+                    </a>
+                </li>
+
+                <li class="side-nav-item">
+                    <a href="#" id="LinkRentDetails" class="side-nav-link">
+                        <i class="uil-list-ui-alt"></i>
+                        <span> Rent Details </span>
+                    </a>
+                </li>
+
+                <li class="side-nav-item">
+                    <a href="#" id="LinkPaymentDetails" class="side-nav-link">
+                        <i class="uil uil-credit-card"></i>
+                        <span> Payment Details </span>
+                    </a>
+                </li>
+
+                <li class="side-nav-item">
+                    <a href="#" id="LinkIncomeReport" class="side-nav-link">
+                        <i class="uil-analysis"></i>
+                        <span> Income Report </span>
+                    </a>
+                </li>
+
+                <li class="side-nav-item">
+                    <a href="logIn.html" class="side-nav-link">
+                        <i class="uil-sign-out-alt"></i>
+                        <span> Sign Out </span>
+                    </a>
+                </li>
+            </ul>
+            <div class="clearfix"></div>
+        </div>
+        <!-- slideMenu end -->
+    </div>
+    <!-- End Sidebar Content-->
+
+    <!-- Start Page Content here -->
+    <div class="content-page">
+        <!-- start content-->
+        <div class="content">
+            <!-- Start TopBar -->
+            <div class="navbar-custom">
+                <!-- start settings -->
+                <ul class="list-unstyled topbar-menu float-end mb-0">
+                    <li class="dropdown notification-list d-lg-none">
+                        <a class="nav-link dropdown-toggle arrow-none" data-bs-toggle="dropdown" href="#" role="button"
+                           aria-haspopup="false" aria-expanded="false">
+                            <i class="uil uil-search noti-icon"></i>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-animated dropdown-lg p-0">
+                            <form class="p-3">
+                                <input type="text" class="form-control" placeholder="Search ..."
+                                       aria-label="Customer's name">
+                            </form>
+                        </div>
+                    </li>
+
+                    <li class="notification-list">
+                        <a class="nav-link end-bar-toggle" href="javascript: void(0);">
+                            <i class="dripicons-gear noti-icon"></i>
+                        </a>
+                    </li>
+                </ul>
+                <!-- end settings -->
+
+                <!-- start leftSide -->
+                <button class="button-menu-mobile open-left">
+                    <i class="uil-align-left"></i>
+                </button>
+                <!-- end leftSide -->
+
+                <!-- start searchBar -->
+                <div class="app-search dropdown d-none d-lg-block">
+                    <form>
+                        <div class="input-group">
+                            <input type="text" class="form-control dropdown-toggle" placeholder="Search..."
+                                   id="top-search">
+                            <span class="uil uil-search search-icon"></span>
+                            <button class="input-group-text btn-primary" type="submit">Search</button>
+                        </div>
+                    </form>
+                </div>
+                <!-- end searchBar -->
+            </div>
+            <!-- End TopBar -->
+
+            <!-- Start Dashboard Content-->
+            <div class="container-fluid" id="adminDashboard">
+
+                <!-- start page title -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="page-title-box">
+                            <div class="page-title-right">
+                                <ol class="breadcrumb m-0">
+                                    <li><a href="javascript: void(0);">Easy Car Rental</a></li>
+                                    <li class="uil uil-angle-right active">Dashboard</li>
+                                </ol>
+                            </div>
+                            <h4 class="page-title">Dashboard</h4>
+                        </div>
+                    </div>
+                </div>
+                <!-- end page title -->
+
+                <h1 id="time" class="d-flex justify-content-center" style="font-size: 2.5rem;"></h1>
+                <script>
+                    function updateTime() {
+                        var now = new Date();
+                        var hours = now.getHours();
+                        var minutes = now.getMinutes();
+                        var seconds = now.getSeconds();
+                        var ampm = hours >= 12 ? 'PM' : 'AM'; // get AM/PM indicator
+                        hours = hours % 12; // convert to 12-hour format
+                        hours = hours ? hours : 12; // handle midnight (0 hours)
+                        var timeString = hours.toString().padStart(2, "0") + ":" + minutes.toString().padStart(2, "0") + ":" + seconds.toString().padStart(2, "0") + " " + ampm;
+                        document.getElementById("time").textContent = timeString;
+                    }
+
+                    setInterval(updateTime, 1000);
+                </script>
+
+                <!-- start content -->
+                <div class="row mt-xl-5">
+                    <!-- start col -->
+                    <div class="col-12">
+                        <!-- start row -->
+                        <div class="row">
+                            <!-- start col -->
+                            <div class="col-xl-12">
+
+                                <!-- start first card set -->
+                                <div class="row">
+                                    <div class="col-lg-6 col-xl-3">
+                                        <div class="card widget-flat card-radius">
+                                            <div class="card-body pb-1">
+                                                <div class="dash-icon float-end icon-2">
+                                                    <ion-icon name="person-add-outline"></ion-icon>
+                                                </div>
+                                                <h5 class="text-muted fw-bolder mt-0" title="Number of Users">Registered
+                                                    Users</h5>
+                                                <h1 class="mt-2 mb-2" id="numberOfUsers">0</h1>
+                                                <hr class="mb-1">
+                                                <p class="mb-0 text-muted text-center">
+                                                    <script>document.write((new Date().getMonth() + 1).toString().padStart(2, "0"))</script>
+                                                    -
+                                                    <script>document.write(new Date().getDate().toString().padStart(2, "0"))</script>
+                                                    -
+                                                    <script>document.write(new Date().getFullYear())</script>
+                                                    <span class="text-nowrap text-success fw-semibold">  Today</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-xl-3">
+                                        <div class="card widget-flat card-radius">
+                                            <div class="card-body pb-1">
+                                                <div class="dash-icon float-end icon-3">
+                                                    <ion-icon name="clipboard-outline"></ion-icon>
+                                                </div>
+                                                <h5 class="text-muted fw-bolder mt-0" title="Number of Bookings">Daily
+                                                    Bookings</h5>
+                                                <h1 class="mt-2 mb-2" id="numberOfBookings">0</h1>
+                                                <hr class="mb-1">
+                                                <p class="mb-0 text-muted text-center">
+                                                    <script>document.write((new Date().getMonth() + 1).toString().padStart(2, "0"))</script>
+                                                    -
+                                                    <script>document.write(new Date().getDate().toString().padStart(2, "0"))</script>
+                                                    -
+                                                    <script>document.write(new Date().getFullYear())</script>
+                                                    <span class="text-nowrap text-success fw-semibold">  Today</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-xl-3">
+                                        <div class="card widget-flat card-radius">
+                                            <div class="card-body pb-1">
+                                                <div class="dash-icon float-end icon-4">
+                                                    <ion-icon name="car-outline"></ion-icon>
+                                                </div>
+                                                <h5 class="text-muted fw-bolder mt-0" title="Available Cars">Available
+                                                    Cars</h5>
+                                                <h1 class="mt-2 mb-2" id="availableCars">0</h1>
+                                                <hr class="mb-1">
+                                                <p class="mb-0 text-muted text-center">
+                                                    <script>document.write((new Date().getMonth() + 1).toString().padStart(2, "0"))</script>
+                                                    -
+                                                    <script>document.write(new Date().getDate().toString().padStart(2, "0"))</script>
+                                                    -
+                                                    <script>document.write(new Date().getFullYear())</script>
+                                                    <span class="text-nowrap text-success fw-semibold">  Today</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-xl-3">
+                                        <div class="card widget-flat card-radius">
+                                            <div class="card-body pb-1">
+                                                <div class="dash-icon float-end icon-1">
+                                                    <ion-icon name="stopwatch-outline"></ion-icon>
+                                                </div>
+                                                <h5 class="text-muted fw-bolder mt-0" title="Reserved Cars">Reserved
+                                                    Cars</h5>
+                                                <h1 class="mt-2 mb-2" id="reservedCars">0</h1>
+                                                <hr class="mb-1">
+                                                <p class="mb-0 text-muted text-center">
+                                                    <script>document.write((new Date().getMonth() + 1).toString().padStart(2, "0"))</script>
+                                                    -
+                                                    <script>document.write(new Date().getDate().toString().padStart(2, "0"))</script>
+                                                    -
+                                                    <script>document.write(new Date().getFullYear())</script>
+                                                    <span class="text-nowrap text-success fw-semibold">  Today</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- end first card set -->
+
+                                <!-- start second card set -->
+                                <div class="row">
+                                    <div class="col-lg-6 col-xl-3">
+                                        <div class="card widget-flat card-radius">
+                                            <div class="card-body pb-1">
+                                                <div class="dash-icon float-end icon-3">
+                                                    <ion-icon name="checkbox-outline"></ion-icon>
+                                                </div>
+                                                <h5 class="text-muted fw-bolder mt-0" title="Bookings Active">Bookings
+                                                    Active</h5>
+                                                <h1 class="mt-2 mb-2" id="activeBookings">0</h1>
+                                                <hr class="mb-1">
+                                                <p class="mb-0 text-muted text-center">
+                                                    <script>document.write((new Date().getMonth() + 1).toString().padStart(2, "0"))</script>
+                                                    -
+                                                    <script>document.write(new Date().getDate().toString().padStart(2, "0"))</script>
+                                                    -
+                                                    <script>document.write(new Date().getFullYear())</script>
+                                                    <span class="text-nowrap text-success fw-semibold">  Today</span>
+                                                </p>
+                                            </div> <!-- end card-body-->
+                                        </div> <!-- end card-->
+                                    </div>
+                                    <div class="col-lg-6 col-xl-3">
+                                        <div class="card widget-flat card-radius">
+                                            <div class="card-body pb-1">
+                                                <div class="dash-icon float-end icon-4">
+                                                    <ion-icon name="person-outline"></ion-icon>
+                                                </div>
+                                                <h5 class="text-muted fw-bolder mt-0" title="Available Drivers">
+                                                    Available Drivers</h5>
+                                                <h1 class="mt-2 mb-2" id="availableDrivers">0</h1>
+                                                <hr class="mb-1">
+                                                <p class="mb-0 text-muted text-center">
+                                                    <script>document.write((new Date().getMonth() + 1).toString().padStart(2, "0"))</script>
+                                                    -
+                                                    <script>document.write(new Date().getDate().toString().padStart(2, "0"))</script>
+                                                    -
+                                                    <script>document.write(new Date().getFullYear())</script>
+                                                    <span class="text-nowrap text-success fw-semibold">  Today</span>
+                                                </p>
+                                            </div> <!-- end card-body-->
+                                        </div> <!-- end card-->
+                                    </div>
+                                    <div class="col-lg-6 col-xl-3">
+                                        <div class="card widget-flat card-radius">
+                                            <div class="card-body pb-1">
+                                                <div class="dash-icon float-end icon-5">
+                                                    <ion-icon name="car-outline"></ion-icon>
+                                                </div>
+                                                <h5 class="text-muted fw-bolder mt-0" title="Maintenance Cars">
+                                                    Maintenance Cars</h5>
+                                                <h1 class="mt-2 mb-2" id="maintenanceCars">0</h1>
+                                                <hr class="mb-1">
+                                                <p class="mb-0 text-muted text-center">
+                                                    <script>document.write((new Date().getMonth() + 1).toString().padStart(2, "0"))</script>
+                                                    -
+                                                    <script>document.write(new Date().getDate().toString().padStart(2, "0"))</script>
+                                                    -
+                                                    <script>document.write(new Date().getFullYear())</script>
+                                                    <span class="text-nowrap text-success fw-semibold">  Today</span>
+                                                </p>
+                                            </div> <!-- end card-body-->
+                                        </div> <!-- end card-->
+                                    </div>
+                                    <div class="col-lg-6 col-xl-3">
+                                        <div class="card widget-flat card-radius">
+                                            <div class="card-body pb-1">
+                                                <div class="dash-icon float-end icon-1">
+                                                    <ion-icon name="cog-outline"></ion-icon>
+                                                </div>
+                                                <h5 class="text-muted fw-bolder mt-0" title="Under Maintenance Cars">
+                                                    Under Maintenance</h5>
+                                                <h1 class="mt-2 mb-2" id="underMaintenanceCars">0</h1>
+                                                <hr class="mb-1">
+                                                <p class="mb-0 text-muted text-center">
+                                                    <script>document.write((new Date().getMonth() + 1).toString().padStart(2, "0"))</script>
+                                                    -
+                                                    <script>document.write(new Date().getDate().toString().padStart(2, "0"))</script>
+                                                    -
+                                                    <script>document.write(new Date().getFullYear())</script>
+                                                    <span class="text-nowrap text-success fw-semibold">  Today</span>
+                                                </p>
+                                            </div> <!-- end card-body-->
+                                        </div> <!-- end card-->
+                                    </div>
+                                </div>
+                                <!-- end second card set -->
+
+                            </div>
+                            <!-- end col -->
+                        </div>
+                        <!-- end row -->
+                    </div>
+                    <!-- end col -->
+                </div>
+                <!-- end content -->
+
+            </div>
+            <!-- End Dashboard Content -->
+
+            <!-- Start Car Content-->
+            <div class="container-fluid" id="manageCar">
+
+                <!-- start page title -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="page-title-box">
+                            <div class="page-title-right">
+                                <ol class="breadcrumb m-0">
+                                    <li><a href="javascript: void(0);">Easy Car Rental</a></li>
+                                    <li class="uil uil-angle-right active">Manage Car</li>
+                                </ol>
+                            </div>
+                            <h4 class="page-title">Manage Car</h4>
+                        </div>
+                    </div>
+                </div>
+                <!-- end page title -->
+
+                <!-- start content-->
+                <div class="row">
+                    <!-- start col-->
+                    <div class="col-12">
+                        <!-- start card-->
+                        <div class="card">
+                            <!-- start card-body -->
+                            <div class="card-body">
+                                <!-- start searchBar -->
+                                <div class="app-search d-lg-block mb-3">
+                                    <form id="carSearchForm" class="col-xl-3">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" placeholder="Search..."
+                                                   id="txtCarSearch">
+                                            <span class="uil uil-search search-icon"></span>
+                                            <button class="input-group-text btn-primary" type="button"
+                                                    id="btnSearchCar">Search
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
+                                <!-- end searchBar -->
+                                <!-- start row -->
+                                <div class="row">
+                                    <!-- start col-->
+                                    <div class="col-xl-12">
+
+                                        <form id="carForm" class="row">
+                                            <section id="sec1Car" class="col-xl-3">
+                                                <div class="mb-3">
+                                                    <label class="form-label" for="carId">Car ID<span
+                                                            class="text-danger">*</span></label>
+                                                    <input class="form-control" readonly id="carId" name="car_Id"
+                                                           placeholder="Eg :- V00-001" type="text">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label class="form-label" for="carName">Car Name<span
+                                                            class="text-danger">*</span></label>
+                                                    <input class="form-control" id="carName" name="car_name"
+                                                           placeholder="Eg :- CHR" type="text">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label class="form-label" for="driverLastName">Car Brand<span
+                                                            class="text-danger">*</span></label>
+                                                    <input class="form-control" id="carBrand" name="car_brand"
+                                                           placeholder="Eg :- Toyota" type="text">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label class="form-label" for="carType">Car Type<span
+                                                            class="text-danger">*</span></label>
+                                                    <select class="form-control" id="carType"
+                                                            name="type">
+                                                        <option>- Select Car Type -</option>
+                                                        <option value="GENERAL">GENERAL</option>
+                                                        <option value="LUXURY">LUXURY</option>
+                                                        <option value="PREMIUM">PREMIUM</option>
+                                                    </select>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label class="form-label" for="frontView">Font Image<span
+                                                            class="text-danger">*</span></label>
+                                                    <input class="form-control" id="frontView" name="front_View"
+                                                           type="file">
+                                                </div>
+                                            </section>
+                                            <section id="sec2Car" class="col-xl-3">
+                                                <div class="mb-3">
+                                                    <label class="form-label" for="backView">Back Image<span
+                                                            class="text-danger">*</span></label>
+                                                    <input class="form-control" id="backView" name="back_View"
+                                                           type="file">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label class="form-label" for="sideView">Side Image<span
+                                                            class="text-danger">*</span></label>
+                                                    <input class="form-control" id="sideView" name="side_View"
+                                                           type="file">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label class="form-label" for="interiorImage">Interior Image<span
+                                                            class="text-danger">*</span></label>
+                                                    <input class="form-control" id="interiorImage" name="interior"
+                                                           type="file">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label class="form-label" for="numberOfPassengers">N0 Of
+                                                        Passengers<span
+                                                                class="text-danger">*</span></label>
+                                                    <input class="form-control" id="numberOfPassengers"
+                                                           name="number_Of_Passengers"
+                                                           placeholder="Eg :- 4" type="text">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label class="form-label" for="transmissionType">Transmission
+                                                        Type<span
+                                                                class="text-danger">*</span></label>
+                                                    <select class="form-control" id="transmissionType"
+                                                            name="transmission_Type">
+                                                        <option>- Select Transmission Type -</option>
+                                                        <option value="AUTO">AUTO</option>
+                                                        <option value="MANUAL">MANUAL</option>
+                                                    </select>
+                                                </div>
+                                            </section>
+                                            <section id="sec3Car" class="col-xl-3">
+                                                <div class="mb-3">
+                                                    <label class="form-label" for="fuelType">Fuel Type<span
+                                                            class="text-danger">*</span></label>
+                                                    <select class="form-control" id="fuelType"
+                                                            name="fuel_Type">
+                                                        <option>- Fuel Type -</option>
+                                                        <option value="DIESEL">DIESEL</option>
+                                                        <option value="PETROL">PETROL</option>
+                                                    </select>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label class="form-label" for="dailyRate">Daily Rate<span
+                                                            class="text-danger">*</span></label>
+                                                    <input class="form-control" id="dailyRate" name="daily_Rate"
+                                                           placeholder="Eg :- 2500" type="text">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label class="form-label" for="monthlyRate">Monthly Rate<span
+                                                            class="text-danger">*</span></label>
+                                                    <input class="form-control" id="monthlyRate" name="monthly_Rate"
+                                                           placeholder="Eg :- 35000" type="text">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label class="form-label" for="priceExtraKM">Price Extra KM<span
+                                                            class="text-danger">*</span></label>
+                                                    <input class="form-control" id="priceExtraKM" name="price_Extra_KM"
+                                                           placeholder="Eg :- 60" type="text">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label class="form-label" for="registrationNumber">Registration
+                                                        Number<span
+                                                                class="text-danger">*</span></label>
+                                                    <input class="form-control" id="registrationNumber"
+                                                           name="registration_Number"
+                                                           placeholder="Eg :- BW-5286" type="text">
+                                                </div>
+                                            </section>
+                                            <section id="sec4Car" class="col-xl-3">
+                                                <div class="mb-3">
+                                                    <label class="form-label" for="freeMileage">Free Mileage<span
+                                                            class="text-danger">*</span></label>
+                                                    <input class="form-control" id="freeMileage" name="free_Mileage"
+                                                           placeholder="Eg :- 5" type="text">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label class="form-label" for="color">Color<span
+                                                            class="text-danger">*</span></label>
+                                                    <input class="form-control" id="color" name="color"
+                                                           placeholder="Eg :- Gray" type="text">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label class="form-label" for="carAvailability">Car
+                                                        Availability<span
+                                                                class="text-danger">*</span></label>
+                                                    <select class="form-control" id="carAvailability"
+                                                            name="car_Availability">
+                                                        <option>- Select Car Availability -</option>
+                                                        <option value="AVAILABLE">AVAILABLE</option>
+                                                        <option value="UNAVAILABLE">UNAVAILABLE</option>
+                                                    </select>
+                                                </div>
+                                                <div class="mb-3 d-grid gap-2 gap-md-0 d-md-flex justify-content-md-end">
+                                                    <button type="button" class="btn btn-success btn me-md-1"
+                                                            id="addCarBtn">
+                                                        Save
+                                                    </button>
+                                                    <button type="button" class="btn btn-primary btn" id="updateCar">
+                                                        Update
+                                                    </button>
+                                                    <button type="button" class="btn btn-danger btn" id="deleteCar">
+                                                        Delete
+                                                    </button>
+                                                </div>
+                                            </section>
+                                        </form>
+
+                                        <div class="flex-grow-0"
+                                             style="overflow-x:auto;-webkit-overflow-scrolling:touch;">
+                                            <table class="table-nowrap table table-centered mb-0">
+                                                <thead class="btn-primary">
+                                                <tr>
+                                                    <th scope="col">Car ID</th>
+                                                    <th scope="col">Car Name</th>
+                                                    <th scope="col">Car Brand</th>
+                                                    <th scope="col">Car Type</th>
+                                                    <th scope="col">N0 Of Passengers</th>
+                                                    <th scope="col">Transmission Type</th>
+                                                    <th scope="col">Fuel Type</th>
+                                                    <th scope="col">Daily Rate</th>
+                                                    <th scope="col">Monthly Rate</th>
+                                                    <th scope="col">Price Extra KM</th>
+                                                    <th scope="col">Registration Number</th>
+                                                    <th scope="col">Free Mileage</th>
+                                                    <th scope="col">Color</th>
+                                                    <th scope="col">Car Availability</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody id="tblCar">
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+
+                                    </div>
+                                    <!-- end col-->
+                                </div>
+                                <!-- end row -->
+                            </div>
+                            <!-- end card-body -->
+                        </div>
+                        <!-- end card-->
+                    </div>
+                    <!-- end col-->
+                </div>
+                <!-- end content-->
+            </div>
+            <!-- End Car Content-->
+
+            <!-- Start Driver Content-->
+            <div class="container-fluid" id="manageDriver">
+
+                <!-- start page title -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="page-title-box">
+                            <div class="page-title-right">
+                                <ol class="breadcrumb m-0">
+                                    <li><a href="javascript: void(0);">Easy Car Rental</a></li>
+                                    <li class="uil uil-angle-right active">Manage Driver</li>
+                                </ol>
+                            </div>
+                            <h4 class="page-title">Manage Driver</h4>
+                        </div>
+                    </div>
+                </div>
+                <!-- end page title -->
+
+                <!-- start content-->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <!-- start searchBar -->
+                                <div class="app-search d-lg-block mb-3">
+                                    <form id="driverSearchForm" class="col-xl-3">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" placeholder="Search..."
+                                                   id="txtDriverSearch">
+                                            <span class="uil uil-search search-icon"></span>
+                                            <button class="input-group-text btn-primary" id="btnSearchDriver"
+                                                    type="button">Search
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
+                                <!-- end searchBar -->
+                                <div class="row">
+                                    <div class="col-xl-12">
+                                        <form id="driverForm" class="row">
+                                            <section id="sec1Driver" class="col-xl-4">
+                                                <div class="mb-3">
+                                                    <label class="form-label" for="driverNicNo">NIC No<span
+                                                            class="text-danger">*</span></label>
+                                                    <input class="form-control" id="driverNicNo" name="user_Id"
+                                                           placeholder="Eg :- 781596458v / 200175968215" type="text">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label class="form-label" for="driverFirstName">First Name<span
+                                                            class="text-danger">*</span></label>
+                                                    <input class="form-control" id="driverFirstName" name="firstName"
+                                                           placeholder="Eg :- Pasan" type="text">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label class="form-label" for="driverLastName">Last Name<span
+                                                            class="text-danger">*</span></label>
+                                                    <input class="form-control" id="driverLastName" name="lastName"
+                                                           placeholder="Eg :- Pahasara" type="text">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label class="form-label" for="contactNo">Contact Number<span
+                                                            class="text-danger">*</span></label>
+                                                    <input class="form-control" id="contactNo" name="contact_No"
+                                                           placeholder="Eg :- 0714548877" type="text">
+                                                </div>
+                                            </section>
+                                            <section id="sec2Driver" class="col-xl-4">
+                                                <div class="mb-3">
+                                                    <label class="form-label" for="address">Address<span
+                                                            class="text-danger">*</span></label>
+                                                    <input class="form-control" id="address" name="address"
+                                                           placeholder="Eg :- Panadura" type="text">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label class="form-label" for="driverEmail">Email<span
+                                                            class="text-danger">*</span></label>
+                                                    <input class="form-control" id="driverEmail" name="email"
+                                                           placeholder="Eg :- pahasara@gmail.com" type="text">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label class="form-label" for="availability">Driver
+                                                        Availability<span
+                                                                class="text-danger">*</span></label>
+                                                    <select class="form-control" id="availability"
+                                                            name="driver_Availability">
+                                                        <option>- Select Driver Availability -</option>
+                                                        <option value="AVAILABLE">AVAILABLE</option>
+                                                        <option value="UNAVAILABLE">UNAVAILABLE</option>
+                                                    </select>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label class="form-label" for="role_Type">Role Type<span
+                                                            class="text-danger">*</span></label>
+                                                    <select class="form-control" id="role_Type"
+                                                            name="role_Type">
+                                                        <option value="DRIVER">DRIVER</option>
+                                                    </select>
+                                                </div>
+                                            </section>
+                                            <section id="sec3Driver" class="col-xl-4">
+                                                <div class="mb-3">
+                                                    <label for="driverUserName" class="form-label">User Name<span
+                                                            class="text-danger">*</span></label>
+                                                    <div class="input-group has-validation">
+                                                        <span class="input-group-text" id="inputGroupPrepend">@</span>
+                                                        <input type="text" class="form-control" id="driverUserName"
+                                                               name="user_Name" placeholder="Eg :- pahasara"
+                                                               aria-describedby="inputGroupPrepend" required>
+                                                        <div class="invalid-feedback">
+                                                            Please choose a username.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="driverPassword" class="form-label">Password<span
+                                                            class="text-danger">*</span></label>
+                                                    <div class="input-group input-group-merge">
+                                                        <input type="password" id="driverPassword" name="password"
+                                                               class="form-control" placeholder="Eg :- vwYnL145">
+                                                        <div class="input-group-text" data-password="false">
+                                                            <span class="uil uil-eye-slash"></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3 d-grid gap-1 d-md-flex justify-content-md-end">
+                                                    <button type="button" class="btn btn-success btn me-md-1"
+                                                            id="addDriverBtn">
+                                                        Save
+                                                    </button>
+                                                    <button type="button" class="btn btn-primary btn me-md-1"
+                                                            id="updateDriver">
+                                                        Update
+                                                    </button>
+                                                    <button type="button" class="btn btn-danger btn" id="deleteDriver">
+                                                        Delete
+                                                    </button>
+                                                </div>
+                                            </section>
+                                        </form>
+
+                                        <div class="table-responsive-xxl flex-grow-0"
+                                             style="overflow-x:auto;-webkit-overflow-scrolling:touch;">
+                                            <table class="table-nowrap table table-centered mb-0">
+                                                <thead class="btn-primary">
+                                                <tr>
+                                                    <th scope="col">NIC No</th>
+                                                    <th scope="col">First Name</th>
+                                                    <th scope="col">Last Name</th>
+                                                    <th scope="col">Contact Number</th>
+                                                    <th scope="col">Address</th>
+                                                    <th scope="col">Email</th>
+                                                    <th scope="col">Availability</th>
+                                                    <th scope="col">Role Type</th>
+                                                    <th scope="col">User Name</th>
+                                                    <th scope="col">Password</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody id="tblDriver">
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+
+                                    </div>
+                                    <!-- end col-->
+                                </div>
+                                <!-- end row -->
+                            </div>
+                            <!-- end card-body -->
+                        </div>
+                        <!-- end card-->
+                    </div>
+                    <!-- end col-->
+                </div>
+                <!-- end content-->
+
+            </div>
+            <!-- End Driver Content-->
+
+            <!-- Start Customer Content-->
+            <div class="container-fluid" id="manageCustomer">
+
+                <!-- start page title -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="page-title-box">
+                            <div class="page-title-right">
+                                <ol class="breadcrumb m-0">
+                                    <li><a href="javascript: void(0);">Easy Car Rental</a></li>
+                                    <li class="uil uil-angle-right active">Manage Customer</li>
+                                </ol>
+                            </div>
+                            <h4 class="page-title">Manage Customer</h4>
+                        </div>
+                    </div>
+                </div>
+                <!-- end page title -->
+
+                <!-- start content-->
+                <div class="row">
+                    <!-- start col-->
+                    <div class="col-12">
+                        <!-- start card-->
+                        <div class="card">
+                            <!-- start card-body -->
+                            <div class="card-body">
+                                <!-- start searchBar -->
+                                <div class="app-search d-lg-block mb-3">
+                                    <form id="customerSearchForm" class="col-xl-3">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" placeholder="Search..."
+                                                   id="txtCustomerSearch">
+                                            <span class="uil uil-search search-icon"></span>
+                                            <button class="input-group-text btn-primary" id="btnSearchCustomer"
+                                                    type="button">Search
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
+                                <!-- end searchBar -->
+                                <!-- start row -->
+                                <div class="row">
+                                    <!-- start col-->
+                                    <div class="col-xl-12">
+                                        <form id="customerDetailsForm" class="row">
+                                            <section id="sec1CustomerDetails" class="col-xl-4">
+                                                <div class="mb-3">
+                                                    <label class="form-label" for="userID">User ID<span
+                                                            class="text-danger">*</span></label>
+                                                    <input class="form-control" id="userID" readonly name="user_Id"
+                                                           placeholder="Eg :- C00-001" type="text">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label class="form-label" for="userFirstName">First Name<span
+                                                            class="text-danger">*</span></label>
+                                                    <input class="form-control" id="userFirstName" name="firstName"
+                                                           placeholder="Eg :- Pasan" type="text">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label class="form-label" for="userLastName">Last Name<span
+                                                            class="text-danger">*</span></label>
+                                                    <input class="form-control" id="userLastName" name="lastName"
+                                                           placeholder="Eg :- Pahasara" type="text">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label class="form-label" for="customerContactNo">Contact
+                                                        Number<span
+                                                                class="text-danger">*</span></label>
+                                                    <input class="form-control" id="customerContactNo" name="contact_No"
+                                                           placeholder="Eg :- 0714548877" type="text">
+                                                </div>
+                                            </section>
+                                            <section id="sec2CustomerDetails" class="col-xl-4">
+                                                <div class="mb-3">
+                                                    <label class="form-label" for="customerAddress">Address<span
+                                                            class="text-danger">*</span></label>
+                                                    <input class="form-control" id="customerAddress" name="address"
+                                                           placeholder="Eg :- Panadura" type="text">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label class="form-label" for="customerDriverEmail">Email<span
+                                                            class="text-danger">*</span></label>
+                                                    <input class="form-control" id="customerDriverEmail" name="email"
+                                                           placeholder="Eg :- pahasara@gmail.com" type="text">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label class="form-label" for="customerNic">Nic No<span
+                                                            class="text-danger">*</span></label>
+                                                    <input class="form-control" id="customerNic" name="nic"
+                                                           placeholder="Eg :- 781596458v / 200175968215" type="text">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label class="form-label" for="imgNiC">NIC Image<span
+                                                            class="text-danger">*</span></label>
+                                                    <input class="form-control" id="imgNiC" name="nic_Img"
+                                                           placeholder="NIC NO" type="file">
+                                                </div>
+                                            </section>
+                                            <section id="sec3CustomerDetails" class="col-xl-4">
+                                                <div class="mb-3">
+                                                    <label class="form-label" for="customerLicence">Licence No<span
+                                                            class="text-danger">*</span></label>
+                                                    <input class="form-control" id="customerLicence" name="license_No"
+                                                           placeholder="Eg :- 587459621587" type="text">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label class="form-label" for="imgLicence">Licence Image<span
+                                                            class="text-danger">*</span></label>
+                                                    <input class="form-control" id="imgLicence" name="license_Img"
+                                                           placeholder="NIC NO" type="file">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="driverUserName" class="form-label">User Name<span
+                                                            class="text-danger">*</span></label>
+                                                    <div class="input-group has-validation">
+                                                        <span class="input-group-text"
+                                                              id="customerInputGroupPrepend">@</span>
+                                                        <input type="text" class="form-control" id="customerUserName"
+                                                               name="user_Name" placeholder="Eg :- pahasara"
+                                                               aria-describedby="customerInputGroupPrepend" required>
+                                                        <div class="invalid-feedback">
+                                                            Please choose a username.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="driverPassword" class="form-label">Password<span
+                                                            class="text-danger">*</span></label>
+                                                    <div class="input-group input-group-merge">
+                                                        <input type="password" id="customerPassword" name="password"
+                                                               class="form-control" placeholder="Eg :- vwYnL145">
+                                                        <div class="input-group-text" data-password="false">
+                                                            <span class="uil uil-eye-slash"></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3 d-grid gap-1 d-md-flex justify-content-md-end">
+                                                    <button type="button" class="btn btn-primary btn me-md-1"
+                                                            id="updateCustomer">
+                                                        Update
+                                                    </button>
+                                                    <button type="button" class="btn btn-danger btn"
+                                                            id="deleteCustomer">
+                                                        Delete
+                                                    </button>
+                                                </div>
+                                            </section>
+                                        </form>
+
+                                        <div class="table-responsive-xxl"
+                                             style="overflow-x:auto;-webkit-overflow-scrolling:touch;">
+                                            <table class="table-nowrap table table-centered mb-0">
+                                                <thead class="btn-primary">
+                                                <tr>
+                                                    <th>User ID</th>
+                                                    <th>First Name</th>
+                                                    <th>Last Name</th>
+                                                    <th>Contact Number</th>
+                                                    <th>Address</th>
+                                                    <th>Email</th>
+                                                    <th>NIC No</th>
+                                                    <th>Licence No</th>
+                                                    <th>User Name</th>
+                                                    <th>Password</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody id="tblCustomerDetails">
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+
+                                    </div>
+                                    <!-- end col-->
+                                </div>
+                                <!-- end row -->
+                            </div>
+                            <!-- end card-body -->
+                        </div>
+                        <!-- end card-->
+                    </div>
+                    <!-- end col-->
+                </div>
+                <!-- end content-->
+
+            </div>
+            <!-- End Customer Content-->
+
+            <!-- Start User Request Content-->
+            <div class="container-fluid" id="userRequest">
+
+                <!-- start page title -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="page-title-box">
+                            <div class="page-title-right">
+                                <ol class="breadcrumb m-0">
+                                    <li><a href="javascript: void(0);">Easy Car Rental</a></li>
+                                    <li class="uil uil-angle-right active">Customer Request</li>
+                                </ol>
+                            </div>
+                            <h4 class="page-title">Customer Request</h4>
+                        </div>
+                    </div>
+                </div>
+                <!-- end page title -->
+
+                <!-- start content-->
+                <div class="row">
+                    <!-- start col-->
+                    <div class="col-12">
+                        <!-- start card-->
+                        <div class="card">
+                            <!-- start card-body -->
+                            <div class="card-body">
+                                <!-- start row -->
+                                <div class="row">
+                                    <!-- start col-->
+                                    <div class="col-xl-12">
+
+                                        <!-- start booking request details -->
+                                        <form id="customerRequestForm" class="row mb-1">
+                                            <section id="secResponseDetails"
+                                                     class="row mx-0 d-flex justify-content-center">
+                                                <div class="mb-1 col-xl-3 col-sm-6">
+                                                    <label class="form-label" for="changeDriverId">Change Driver ID<span
+                                                            class="text-danger">*</span></label>
+                                                    <select class="form-control" id="changeDriverId"
+                                                            name="user_Id">
+                                                        <option value="">- Change Driver ID -</option>
+                                                    </select>
+                                                </div>
+                                            </section>
+                                        </form>
+                                        <!-- end booking request details -->
+
+                                        <!-- start button content-->
+                                        <div class="mb-3 mt-1 d-grid gap-1 d-md-flex justify-content-md-end">
+                                            <button type="button" class="btn btn-success btn" id="btnAccept">
+                                                Accept
+                                            </button>
+                                            <button type="button" class="btn btn-danger btn" id="btnReject">
+                                                Reject
+                                            </button>
+                                            <!-- Button payment modal -->
+                                            <button type="button" class="btn btn-warning btn me-md-1 text-white"
+                                                    data-bs-toggle="modal" data-bs-target="#exampleModal"
+                                                    id="btnPayment">
+                                                Payment
+                                            </button>
+                                        </div>
+                                        <!-- end button content-->
+
+                                        <!-- start searchBar -->
+                                        <div class="app-search d-lg-block mb-3">
+                                            <form id="customerRequestSearchForm" class="col-sm-5 col-lg-3">
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" placeholder="Search..."
+                                                           id="txtCustomerRequestSearch">
+                                                    <span class="uil uil-search search-icon"></span>
+                                                    <button class="input-group-text btn-danger"
+                                                            id="CustomerRequestSearch"
+                                                            type="button">Search
+                                                    </button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <!-- end searchBar -->
+
+                                        <!-- start request table content-->
+                                        <div class="table-responsive-xxl table-nowrap">
+                                            <table class="table table-centered mb-0">
+                                                <thead class="btn-primary">
+                                                <tr>
+                                                    <th>Rent ID</th>
+                                                    <th>Car ID</th>
+                                                    <th>Customer ID</th>
+                                                    <th>Driver ID</th>
+                                                    <th>Driver State</th>
+                                                    <th>Rent State</th>
+                                                    <th>Pick-Up Date</th>
+                                                    <th>Pick-Up Time</th>
+                                                    <th>Return Date</th>
+                                                    <th>Return Time</th>
+                                                    <th>Location</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody id="tblRequest">
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <!-- end request table content-->
+
+                                        <!-- Modal -->
+                                        <div class="modal fade" id="exampleModal" tabindex="-1"
+                                             aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog modal-lg">
+                                                <div class="modal-content" style="border-radius: 1.5rem;">
+                                                    <div class="modal-header">
+                                                        <h1 class="modal-title fs-3 fw-bolder" id="exampleModalLabel">
+                                                            Payment Rent</h1>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                                aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body">
+
+
+                                                        <div class="col-xl-12">
+                                                            <form id="paymentForm" class="row">
+                                                                <div class="mb-3 col-xl-3">
+                                                                    <label class="form-label" for="paymentId">Payment ID<span
+                                                                            class="text-danger">*</span></label>
+                                                                    <input class="form-control" id="paymentId" readonly
+                                                                           name="paymentID"
+                                                                           placeholder="Payment ID" type="text">
+                                                                </div>
+                                                                <div class="mb-3 col-xl-3">
+                                                                    <label class="form-label" for="rentId">Rent ID<span
+                                                                            class="text-danger">*</span></label>
+                                                                    <input class="form-control" id="rentId" readonly
+                                                                           name="rentID"
+                                                                           placeholder="Rent ID" type="text">
+                                                                </div>
+                                                                <div class="mb-3 col-xl-3">
+                                                                    <label class="form-label" for="paymentType">Payment
+                                                                        Type<span
+                                                                                class="text-danger">*</span></label>
+                                                                    <select class="form-control" id="paymentType"
+                                                                            name="paymentType">
+                                                                        <option value="">- Select Payment Type -
+                                                                        </option>
+                                                                        <option value="NORMAL">NORMAL</option>
+                                                                        <option value="LOST_DAMAGE">LOST_DAMAGE</option>
+                                                                    </select>
+                                                                </div>
+                                                                <div class="mb-3 col-xl-3">
+                                                                    <label class="form-label" for="paymentDate">Payment
+                                                                        Date<span
+                                                                                class="text-danger">*</span></label>
+                                                                    <input class="form-control" id="paymentDate"
+                                                                           readonly name="date"
+                                                                           placeholder="Payment Date" type="text">
+                                                                </div>
+                                                                <div class="mb-3 col-xl-3">
+                                                                    <label class="form-label" for="paymentTime">Payment
+                                                                        Time<span
+                                                                                class="text-danger">*</span></label>
+                                                                    <input class="form-control" id="paymentTime"
+                                                                           readonly name="time"
+                                                                           placeholder="Payment Time" type="text">
+                                                                </div>
+                                                                <div class="mb-3 col-xl-3">
+                                                                    <label class="form-label" for="lostDamage">Lost
+                                                                        Damage<span
+                                                                                class="text-danger">*</span></label>
+                                                                    <input class="form-control" id="lostDamage"
+                                                                           name="lostDamage"
+                                                                           placeholder="Lost Damage" type="text">
+                                                                </div>
+                                                                <div class="mb-3 col-xl-3">
+                                                                    <label class="form-label" for="carFee">Car Fee<span
+                                                                            class="text-danger">*</span></label>
+                                                                    <input class="form-control" readonly id="carFee"
+                                                                           name="rentFee"
+                                                                           placeholder="Car Fee" type="text">
+                                                                </div>
+                                                                <div class="mb-3 col-xl-3">
+                                                                    <label class="form-label" for="days">Days<span
+                                                                            class="text-danger">*</span></label>
+                                                                    <input class="form-control" id="days"
+                                                                           placeholder="Days" type="text">
+                                                                </div>
+                                                                <div class="mb-3 col-xl-3">
+                                                                    <label class="form-label" for="mileage">Mileage<span
+                                                                            class="text-danger">*</span></label>
+                                                                    <input class="form-control" id="mileage"
+                                                                           name="price_Extra_KM"
+                                                                           placeholder="Mileage" type="text">
+                                                                </div>
+                                                                <div class="mb-3 col-xl-3">
+                                                                    <label class="form-label" for="driverFee">Driver Fee<span
+                                                                            class="text-danger">*</span></label>
+                                                                    <input class="form-control" id="driverFee"
+                                                                           name="driverFee"
+                                                                           placeholder="Driver Fee" type="text">
+                                                                </div>
+                                                                <div class="mb-3 col-xl-3">
+                                                                    <label class="form-label" for="total">Total<span
+                                                                            class="text-danger">*</span></label>
+                                                                    <input class="form-control" id="total" readonly name="total"
+                                                                           placeholder="Total" type="text">
+                                                                </div>
+                                                            </form>
+                                                        </div>
+
+
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary"
+                                                                data-bs-dismiss="modal">Close
+                                                        </button>
+                                                        <button type="button" id="btnPayRent" form="paymentForm"
+                                                                class="btn btn-success btn">Pay now
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <!-- end col-->
+                                </div>
+                                <!-- end row -->
+                            </div>
+                            <!-- end card-body -->
+                        </div>
+                        <!-- end card-->
+                    </div>
+                    <!-- end col-->
+                </div>
+                <!-- end content-->
+
+            </div>
+            <!-- End User Request Content-->
+
+            <!-- Start Rent Details Content-->
+            <div class="container-fluid" id="rentDetails">
+
+                <!-- start page title -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="page-title-box">
+                            <div class="page-title-right">
+                                <ol class="breadcrumb m-0">
+                                    <li><a href="javascript: void(0);">Easy Car Rental</a></li>
+                                    <li class="uil uil-angle-right active">Rent Details</li>
+                                </ol>
+                            </div>
+                            <h4 class="page-title">Rent Details</h4>
+                        </div>
+                    </div>
+                </div>
+                <!-- end page title -->
+
+                <!-- start content-->
+                <div class="row">
+                    <!-- start col-->
+                    <div class="col-12">
+                        <!-- start card-->
+                        <div class="card">
+                            <!-- start card-body -->
+                            <div class="card-body">
+                                <!-- start row -->
+                                <div class="row">
+                                    <!-- start col-->
+                                    <div class="col-xl-12">
+
+                                        <!-- start searchBar -->
+                                        <div class="app-search d-lg-block mb-3">
+                                            <form id="customerRequestSearchFormDetails" class="col-sm-5 col-lg-3">
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" placeholder="Search..."
+                                                           id="txtCustomerRequestSearchDetails">
+                                                    <span class="uil uil-search search-icon"></span>
+                                                    <button class="input-group-text btn-danger"
+                                                            id="CustomerRequestSearchDetails"
+                                                            type="button">Search
+                                                    </button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <!-- end searchBar -->
+
+                                        <!-- start request table content-->
+                                        <div class="table-responsive-xxl table-nowrap">
+                                            <table class="table table-centered mb-0">
+                                                <thead class="btn-primary">
+                                                <tr>
+                                                    <th>Rent ID</th>
+                                                    <th>Car ID</th>
+                                                    <th>Customer ID</th>
+                                                    <th>Driver ID</th>
+                                                    <th>Driver State</th>
+                                                    <th>Rent State</th>
+                                                    <th>Pick-Up Date</th>
+                                                    <th>Pick-Up Time</th>
+                                                    <th>Return Date</th>
+                                                    <th>Return Time</th>
+                                                    <th>Location</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody id="tblRequestDetails">
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <!-- end request table content-->
+
+                                    </div>
+                                    <!-- end col-->
+                                </div>
+                                <!-- end row -->
+                            </div>
+                            <!-- end card-body -->
+                        </div>
+                        <!-- end card-->
+                    </div>
+                    <!-- end col-->
+                </div>
+                <!-- end content-->
+
+            </div>
+            <!-- End Rent Details Content-->
+
+            <!-- Start Payment Details Content-->
+            <div class="container-fluid" id="paymentDetails">
+
+                <!-- start page title -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="page-title-box">
+                            <div class="page-title-right">
+                                <ol class="breadcrumb m-0">
+                                    <li><a href="javascript: void(0);">Easy Car Rental</a></li>
+                                    <li class="uil uil-angle-right active">Payment Details</li>
+                                </ol>
+                            </div>
+                            <h4 class="page-title">Payment Details</h4>
+                        </div>
+                    </div>
+                </div>
+                <!-- end page title -->
+
+                <!-- start content-->
+                <div class="row">
+                    <!-- start col-->
+                    <div class="col-12">
+                        <!-- start card-->
+                        <div class="card">
+                            <!-- start card-body -->
+                            <div class="card-body">
+                                <!-- start row -->
+                                <div class="row">
+                                    <!-- start col -->
+                                    <div class="col-xl-12">
+                                        <div class="row m-3">
+                                            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                                <div>
+                                                    <label for="paymentDetailsPickFromDate"
+                                                           class="form-label">From</label>
+                                                    <input type="date" id="paymentDetailsPickFromDate"
+                                                           class="form-control" name="fromDate"
+                                                           placeholder="Start Date">
+                                                </div>
+                                                <div>
+                                                    <label for="paymentDetailsPickFromDate"
+                                                           class="form-label">To</label>
+                                                    <input type="date" id="paymentDetailsPickToDate"
+                                                           class="form-control" name="toDate"
+                                                           placeholder="End Date">
+                                                </div>
+                                                <button type="button" class="btn btn-danger mt-3" id="btnSearchPayment">
+                                                    Search
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <table class="table table-centered mb-0">
+                                            <thead class="btn-primary">
+                                            <tr>
+                                                <th>Payment ID</th>
+                                                <th>Date</th>
+                                                <th>Amount (Rs.)</th>
+                                                <th>Rent ID</th>
+                                                <th>Customer ID</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody id="tblPayments">
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <!-- end col-->
+                                </div>
+                                <!-- end row -->
+                            </div>
+                            <!-- end card-body -->
+                        </div>
+                        <!-- end card-->
+                    </div>
+                    <!-- end col-->
+                </div>
+                <!-- end content-->
+
+            </div>
+            <!-- End Payment Details Content-->
+
+            <!-- Start Income Report Content-->
+            <div class="container-fluid" id="incomeReport">
+
+                <!-- start page title -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="page-title-box">
+                            <div class="page-title-right">
+                                <ol class="breadcrumb m-0">
+                                    <li><a href="javascript: void(0);">Easy Car Rental</a></li>
+                                    <li class="uil uil-angle-right active">Income Report</li>
+                                </ol>
+                            </div>
+                            <h4 class="page-title">Income Report</h4>
+                        </div>
+                    </div>
+                </div>
+                <!-- end page title -->
+
+                <!-- start content-->
+                <div class="row">
+                    <!-- start col-->
+                    <div class="col-12">
+                        <!-- start row -->
+                        <div class="row">
+                            <!-- start col -->
+                            <div class="col-xl-12">
+                                <div class="row d-lg-flex justify-content-lg-center">
+
+                                    <!-- start card-->
+                                    <div class="card col-xl-4 col-lg-6 table-responsive-xxl">
+                                        <!-- start card-body -->
+                                        <div class="card-body p-1">
+                                            <h3 class="text-center">Daily Income</h3>
+                                            <table class="table-nowrap table table-centered mb-0 p-1">
+                                                <thead class="btn-primary">
+                                                <tr>
+                                                    <th>Date</th>
+                                                    <th>Booking</th>
+                                                    <th>Daily Income (Rs.)</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody id="tblDaily">
+
+                                                </tbody>
+                                            </table>
+
+                                        </div>
+                                        <!-- end card-body -->
+                                    </div>
+                                    <!-- end card-->
+
+                                    <!-- start card-->
+                                    <div class="card col-xl-4 col-lg-6 table-responsive-xxl">
+                                        <!-- start card-body -->
+                                        <div class="card-body p-1">
+                                            <h3 class="text-center">Monthly Income</h3>
+                                            <table class="table-nowrap table table-centered mb-0 p-1">
+                                                <thead class="btn-primary">
+                                                <tr>
+                                                    <th>Month</th>
+                                                    <th>Booking</th>
+                                                    <th>Monthly Income (Rs.)</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody id="tblMonthly">
+
+                                                </tbody>
+                                            </table>
+
+                                        </div>
+                                        <!-- end card-body -->
+                                    </div>
+                                    <!-- end card-->
+
+                                    <!-- start card-->
+                                    <div class="card col-xl-4 col-lg-6 table-responsive-xxl">
+                                        <!-- start card-body -->
+                                        <div class="card-body p-1">
+                                            <h3 class="text-center">Annually Income</h3>
+                                            <table class="table-nowrap table table-centered mb-0 p-1">
+                                                <thead class="btn-primary">
+                                                <tr>
+                                                    <th>Annual</th>
+                                                    <th>Booking</th>
+                                                    <th>Annually Income (Rs.)</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody id="tblYearly">
+
+                                                </tbody>
+                                            </table>
+
+                                        </div>
+                                        <!-- end card-body -->
+                                    </div>
+                                    <!-- end card-->
+
+                                </div>
+                            </div>
+                            <!-- end col-->
+                        </div>
+                        <!-- end row -->
+                    </div>
+                    <!-- end col-->
+                </div>
+                <!-- end content-->
+
+            </div>
+            <!-- End Income Report Content-->
+
+            <!-- Start Footer Content -->
+            <footer class="footer">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <script>document.write(new Date().getFullYear())</script>
+                            © Pasan Pahasara
+                        </div>
+                        <div class="col-md-6">
+                            <div class="text-md-end footer-links d-none d-md-block">
+                                <a href="javascript: void(0);">About</a>
+                                <a href="javascript: void(0);">Support</a>
+                                <a href="javascript: void(0);">Contact Us</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <!-- End Footer Content -->
+
+        </div>
+        <!-- end content-->
+    </div>
+    <!-- End Page Content here -->
+</section>
+<!-- End Sidebar Wrapper-->
+
+<!-- Bundle -->
+<script src="../assets/js/vendor/vendor.min.js"></script>
+<script src="../assets/js/vendor/app.min.js"></script>
+
+<!-- Icons -->
+<script src="https://code.iconify.design/iconify-icon/1.0.5/iconify-icon.min.js"></script>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+
+<!-- jQuery -->
+<script src="../assets/jQuery/jquery-3.6.0.min.js"></script>
+
+<!-- JS -->
+<script src="../controller/carController.js"></script>
+<script src="../controller/driverController.js"></script>
+<script src="../controller/userController.js"></script>
+<script src="../controller/dashboardController.js"></script>
+<script src="../controller/IncomeController.js"></script>
+<script>
+    let cusRequestBaseUrl = "http://localhost:8080/Back_End_war/";
+
+    loadCustomerRequestDetails();
+    generatePaymentId();
+    changeDriverID();
+    loadPaymentDetails();
+
+    // default submit false
+    $(function () {
+        $("#customerRequestSearchForm").submit(function () {
+            return false;
+        });
+    });
+
+    //<!------------------------------------ Navigations ------------------------------------>
+
+    //<!-- Start Document Ready Navigation -->
+    $(function () {
+        $("#total").val($("#lostDamage").val() + $("#carFee").val() + $("#driverFee").val());
+        $("#adminDashboard").css("display", "block");
+        $("#manageCar").css("display", "none");
+        $("#manageDriver").css("display", "none");
+        $("#manageCustomer").css("display", "none");
+        $("#paymentDetails").css("display", "none");
+        $("#userRequest").css("display", "none");
+        $("#rentDetails").css("display", "none");
+        $("#incomeReport").css("display", "none");
+    });
+    <!-- End Document Ready Navigation -->
+
+    <!-- Start Dashboard Navigation -->
+    $("#LinkAdminDashboard").on('click', function () {
+        $("#adminDashboard").css("display", "block");
+        $("#manageCar").css("display", "none");
+        $("#manageDriver").css("display", "none");
+        $("#manageCustomer").css("display", "none");
+        $("#paymentDetails").css("display", "none");
+        $("#userRequest").css("display", "none");
+        $("#rentDetails").css("display", "none");
+        $("#incomeReport").css("display", "none");
+    });
+    <!-- End Dashboard Navigation -->
+
+    <!-- Start Manage Car Navigation -->
+    $("#LinkManageCar").on('click', function () {
+        $("#adminDashboard").css("display", "none");
+        $("#manageCar").css("display", "block");
+        $("#manageDriver").css("display", "none");
+        $("#manageCustomer").css("display", "none");
+        $("#paymentDetails").css("display", "none");
+        $("#userRequest").css("display", "none");
+        $("#rentDetails").css("display", "none");
+        $("#incomeReport").css("display", "none");
+    });
+    <!-- End Manage Car Navigation -->
+
+    <!-- Start Manage Car Navigation -->
+    $("#LinkManageDriver").on('click', function () {
+        $("#adminDashboard").css("display", "none");
+        $("#manageCar").css("display", "none");
+        $("#manageDriver").css("display", "block");
+        $("#manageCustomer").css("display", "none");
+        $("#paymentDetails").css("display", "none");
+        $("#userRequest").css("display", "none");
+        $("#rentDetails").css("display", "none");
+        $("#incomeReport").css("display", "none");
+    });
+    <!-- End Manage Car Navigation -->
+
+    <!-- Start Manage Customer Navigation -->
+    $("#LinkManageCustomer").on('click', function () {
+        $("#adminDashboard").css("display", "none");
+        $("#manageCar").css("display", "none");
+        $("#manageDriver").css("display", "none");
+        $("#manageCustomer").css("display", "block");
+        $("#paymentDetails").css("display", "none");
+        $("#userRequest").css("display", "none");
+        $("#rentDetails").css("display", "none");
+        $("#incomeReport").css("display", "none");
+    });
+    <!-- End Manage Customer Navigation -->
+
+    <!-- Start Manage Payment Navigation -->
+    $("#LinkPaymentDetails").on('click', function () {
+        $("#adminDashboard").css("display", "none");
+        $("#manageCar").css("display", "none");
+        $("#manageDriver").css("display", "none");
+        $("#manageCustomer").css("display", "none");
+        $("#paymentDetails").css("display", "block");
+        $("#userRequest").css("display", "none");
+        $("#rentDetails").css("display", "none");
+        $("#incomeReport").css("display", "none");
+    });
+    <!-- End Manage Payment Navigation -->
+
+    <!-- Start Customer Request Navigation -->
+    $("#LinkUserRequest").on('click', function () {
+        $("#adminDashboard").css("display", "none");
+        $("#manageCar").css("display", "none");
+        $("#manageDriver").css("display", "none");
+        $("#manageCustomer").css("display", "none");
+        $("#paymentDetails").css("display", "none");
+        $("#userRequest").css("display", "block");
+        $("#rentDetails").css("display", "none");
+        $("#incomeReport").css("display", "none");
+    });
+    <!-- End Customer Request Navigation -->
+
+    <!-- Start Rent Details Navigation -->
+    $("#LinkRentDetails").on('click', function () {
+        $("#adminDashboard").css("display", "none");
+        $("#manageCar").css("display", "none");
+        $("#manageDriver").css("display", "none");
+        $("#manageCustomer").css("display", "none");
+        $("#paymentDetails").css("display", "none");
+        $("#userRequest").css("display", "none");
+        $("#rentDetails").css("display", "block");
+        $("#incomeReport").css("display", "none");
+    });
+    <!-- End Rent Details Navigation -->
+
+    <!-- Start Income Details Navigation -->
+    $("#LinkIncomeReport").on('click', function () {
+        $("#adminDashboard").css("display", "none");
+        $("#manageCar").css("display", "none");
+        $("#manageDriver").css("display", "none");
+        $("#manageCustomer").css("display", "none");
+        $("#paymentDetails").css("display", "none");
+        $("#userRequest").css("display", "none");
+        $("#rentDetails").css("display", "none");
+        $("#incomeReport").css("display", "block");
+    });
+    <!-- End Income Details Navigation -->
+
+    //<!------------------------------------ Customer Request ------------------------------------>
+
+    <!-- Start Customer Request Details get function -->
+    function loadCustomerRequestDetails() {
+        $("#tblRequest,#tblRequestDetails").empty();
+        $.ajax({
+            url: cusRequestBaseUrl + "rent",
+            contentType: "application/json",
+            dataType: "json",
+            success: function (res) {
+                for (var reqCus of res.data) {
+                    $("#tblRequest,#tblRequestDetails").append(`<tr><td>${reqCus.rentID}</td><td>${reqCus.rentDetails.at(0).carID}</td><td>${reqCus.regUser.user.user_Id}</td><td>${reqCus.rentDetails.at(0).driverID}</td><td>${reqCus.driverRequestType}</td><td>${reqCus.rentType}</td><td>${reqCus.pickUpDate}</td><td>${reqCus.pickUpTime}</td><td>${reqCus.returnDate}</td><td>${reqCus.returnTime}</td><td>${reqCus.location}</td></tr>`);
+                }
+                customerRequestBindClickEvents();
+            },
+            error: function (error) {
+                let message = JSON.parse(error.responseText).message;
+                alert(message);
+            }
+        });
+    }
+
+    <!-- End Customer Request Details get function -->
+
+    <!-- start search customer request using search button -->
+    $("#CustomerRequestSearch,#CustomerRequestSearchDetails").on('click', function () {
+        searchCustomerRequest();
+    });
+    <!-- end search customer request using search button -->
+
+    <!-- start search customer request using press ENTER -->
+    $("#txtCustomerRequestSearch,#txtCustomerRequestSearchDetails").on('keyup', function (event) {
+        if (event.code === "Enter") {
+            searchCustomerRequest();
+        }
+    });
+    <!-- end search customer request using press ENTER -->
+
+    <!-- start search customer request function -->
+    function searchCustomerRequest() {
+        $("#tblRequest,#tblRequestDetails").empty();
+        let searchCustomerRequest = $("#txtCustomerRequestSearch,#txtCustomerRequestSearchDetails").val();
+        $.ajax({
+            url: driverBaseUrl + "rent",
+            contentType: "application/json",
+            dataType: "json",
+            success: function (res) {
+                for (var reqCus of res.data) {
+                    if (searchCustomerRequest.trim() === reqCus.rentID) {
+                        $("#tblRequest,#tblRequestDetails").append(`<tr><td>${reqCus.rentID}</td><td>${reqCus.rentDetails.at(0).carID}</td><td>${reqCus.regUser.user.user_Id}</td><td>${reqCus.rentDetails.at(0).driverID}</td><td>${reqCus.driverRequestType}</td><td>${reqCus.rentType}</td><td>${reqCus.pickUpDate}</td><td>${reqCus.pickUpTime}</td><td>${reqCus.returnDate}</td><td>${reqCus.returnTime}</td><td>${reqCus.location}</td></tr>`);
+                        customerRequestBindClickEvents();
+                        return;
+                    }
+                }
+                if (searchCustomerRequest.trim() !== reqCus.rentID) {
+                    loadCustomerRequestDetails();
+                    $("#txtCustomerRequestSearch,#txtCustomerRequestSearchDetails").val("");
+                    alert("There is no item available for that " + searchCustomerRequest);
+                }
+            }
+        });
+    }
+    <!-- end search customer request function -->
+
+    <!-- start bind click events to the table rows function -->
+    let carID;
+
+    function customerRequestBindClickEvents() {
+        var now = new Date();
+        var year = now.getFullYear();
+        var month = now.getMonth() + 1;
+        var day = now.getDate();
+        var hour = now.getHours();
+        var minute = now.getMinutes();
+        var second = now.getSeconds();
+        var formattedDate = year + "-" + month.toString().padStart(2, "0") + "-" + day.toString().padStart(2, "0");
+        var formattedTime = hour.toString().padStart(2, "0") + ":" + minute.toString().padStart(2, "0") + ":" + second.toString().padStart(2, "0");
+        var date = formattedDate;
+        var time = formattedTime;
+        $("#tblRequest>tr").on('click', function () {
+            //Set values to the text-fields
+            $("#rentId").val($(this).children().eq(0).text());
+            $("#paymentDate").val(date);
+            $("#paymentTime").val(time);
+            $("#changeDriverId").val($(this).children().eq(3).text());
+            carID = $(this).children().eq(1).text();
+            loadAllCarsAndPaymentDetails();
+        });
+    }
+    <!-- end bind click events to the table rows function -->
+
+    <!-- start generate payment id function -->
+    function generatePaymentId() {
+        $.ajax({
+            url: cusRequestBaseUrl + "payment/generatePaymentId",
+            method: "get",
+            dataType: "json",
+            success: function (res) {
+                $('#paymentId').val(res.data);
+            }
+        })
+    }
+    <!-- end generate payment id function -->
+
+    <!-- start payment add -->
+    $("#btnPayRent").on('click', function () {
+        let paymentId = $("#paymentId").val();
+        let rentID = $("#rentId").val();
+        let paymentType = $("#paymentType").val();
+        let paymentDate = $("#paymentDate").val();
+        let paymentTime = $("#paymentTime").val();
+        let lostDamage = $("#lostDamage").val();
+        let carFee = $("#carFee").val();
+        let driverFee = $("#driverFee").val();
+        let total = $("#total").val();
+
+        var paymentOb = {
+            paymentID: paymentId,
+            rentID: {
+                rentID: rentID
+            },
+            paymentType: paymentType,
+            date: paymentDate,
+            time: paymentTime,
+            lostDamage: lostDamage,
+            rentFee: carFee,
+            driverFee: driverFee,
+            total: total,
+        }
+
+        $.ajax({
+            url: cusRequestBaseUrl + "payment",
+            method: "POST",
+            data: JSON.stringify(paymentOb),
+            dataType: "json",
+            contentType: "application/json",
+            success: function (res) {
+                alert(res.message);
+            },
+            error: function (error) {
+                let message = JSON.parse(error.responseText).message;
+                alert(message);
+            }
+        });
+    });
+    <!-- end payment add -->
+
+    <!-- start accept button add -->
+    $("#btnAccept").on('click', function () {
+        let rentID = $("#rentId").val();
+        let driverID = $("#changeDriverId").val();
+        $.ajax({
+            url: cusRequestBaseUrl + "rent/rentConfirm/?rentID=" + rentID + "&driverId=" + driverID,
+            method: "post",
+            dataType: "json",
+            success: function (res) {
+                alert(res.message);
+                $("#tblRequest").empty();
+                loadCustomerRequestDetails();
+                $("#changeDriverId").empty();
+                changeDriverID();
+            },
+            error: function (error) {
+                let message = JSON.parse(error.responseText).message;
+                alert(message);
+            }
+        });
+    });
+    <!-- end accept button add -->
+
+    <!-- start reject button add -->
+    $("#btnReject").on("click", function () {
+        let rentID = $("#rentId").val();
+        let driverID = $("#changeDriverId").val();
+        $.ajax({
+            url: cusRequestBaseUrl + "rent/rentReject/?rentID=" + rentID + "&driverId=" + driverID,
+            method: "post",
+            dataType: "json",
+            success: function (res) {
+                alert(res.message);
+                $("#tblRequest").empty();
+                loadCustomerRequestDetails();
+            },
+            error: function (error) {
+                let message = JSON.parse(error.responseText).message;
+                alert(message);
+            }
+        });
+
+    });
+    <!-- end reject button add -->
+
+    <!-- start change driver id function -->
+    function changeDriverID() {
+        $.ajax({
+            url: cusRequestBaseUrl + "driver/loadAvailabilityDrivers",
+            method: "GET",
+            contentType: "application/json",
+            dataType: "json",
+            success: function (res) {
+                for (let i of res.data) {
+                    $("#changeDriverId").append(`<option>${i.user_Id}</option>`);
+                }
+            },
+            error: function (error) {
+                let message = JSON.parse(error.responseText).message;
+                alert(message);
+            }
+        });
+    }
+    <!-- end change driver id function -->
+
+    <!-- start loadAllCarsAndPaymentDetails function -->
+    function loadAllCarsAndPaymentDetails() {
+        $.ajax({
+            url: cusRequestBaseUrl + "car/searchCar/?car_Id=" + carID,
+            method: "GET",
+            dataType: "json",
+            success: function (res) {
+                console.log(res);
+                $('#carFee').val(res.rent_Duration_Price.daily_Rate);
+                let mileagePrice = res.price_Extra_KM;
+                let freeMileage = res.free_Mileage;
+
+                $(document).on("change keyup blur", "#days,#lostDamage,#carFee,#driverFee,#mileage", function () {
+                    /**
+                     * Payment Details
+                     * */
+                    let lostDamage = $('#lostDamage').val();
+                    let carFee = $('#carFee').val();
+                    let driverFee = $('#driverFee').val();
+                    let mileage = $('#mileage').val();
+                    let days = $('#days').val();
+                    let mileageCost;
+                    let m = parseFloat(mileage) / parseFloat(days);
+                    console.log(m);
+                    if (m => freeMileage) {
+                        let mileageSize = parseFloat(mileage) - (parseFloat(days) * parseFloat(freeMileage));
+                        mileageCost = parseFloat(mileageSize) * parseFloat(mileagePrice);
+
+                        let carTotal = parseFloat(carFee) * parseFloat(days);
+                        let driverTotal = parseFloat(driverFee) * parseFloat(days);
+
+                        $("#total").val(parseFloat(lostDamage) + parseFloat(carTotal) + parseFloat(driverTotal) + mileageCost);
+
+                    }
+                    if (m < freeMileage) {
+
+                        let carTotal = parseFloat(carFee) * parseFloat(days);
+                        let driverTotal = parseFloat(driverFee) * parseFloat(days);
+
+                        $("#total").val(parseFloat(lostDamage) + parseFloat(carTotal) + parseFloat(driverTotal));
+                    }
+                });
+
+            }
+        });
+    }
+    <!-- end loadAllCarsAndPaymentDetails function -->
+
+    //<!------------------------------------ Payment Details ------------------------------------>
+
+    <!-- Start Payment Details get function -->
+    function loadPaymentDetails() {
+        $("#tblPayments").empty();
+        $.ajax({
+            method: "GET",
+            url: cusRequestBaseUrl + "payment",
+            contentType: "application/json",
+            dataType: "json",
+            success: function (res) {
+                for (var payment of res.data) {
+                    $("#tblPayments").append(`<tr><td>${payment.paymentID}</td><td>${payment.date}</td><td>${payment.total}</td><td>${payment.rentID.rentID}</td><td>${payment.rentID.regUser.user.user_Id}</td></tr>`);
+                }
+            },
+            error: function (error) {
+                let message = JSON.parse(error.responseText).message;
+                alert(message);
+            }
+        });
+    }
+
+    <!-- End Payment Details get function -->
+
+
+    //<!------------------------------------ RegEx Customer ------------------------------------>
+
+    <!-- start regex patterns -->
+    const regExCusFirstName2 = /^[A-z ]{3,20}$/;
+    const regExCusLastName2 = /^[A-z ]{3,20}$/;
+    const regExCusContactNumber2 = /^(07(0|1|2|4|5|6|7|8)[0-9]{7})$/;
+    const regExCusAddress2 = /^[A-z0-9/ ]{4,30}$/;
+    const regExCusEmailAddress2 = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    const regExCusNic2 = /^([0-9]{12}|[0-9V]{10}|[0-9v]{10})$/;
+    const regExCusLicense2 = /^([0-9]{12})$/;
+    const regExCusUserName2 = /^[A-z0-9/ ]{4,30}$/;
+    const regExCusPassword2 = /^([A-Z a-z]{5,15}[0-9]{1,10})$/;
+    <!-- end regex patterns -->
+
+    // customer validation array
+    let cusValidations2 = [];
+
+    cusValidations2.push({
+        cusReg: regExCusFirstName2,
+        cusField: $('#userFirstName')
+    });
+    cusValidations2.push({
+        cusReg: regExCusLastName2,
+        cusField: $('#userLastName')
+    });
+    cusValidations2.push({
+        cusReg: regExCusContactNumber2,
+        cusField: $('#customerContactNo')
+    });
+    cusValidations2.push({
+        cusReg: regExCusAddress2,
+        cusField: $('#customerAddress')
+    });
+    cusValidations2.push({
+        cusReg: regExCusEmailAddress2,
+        cusField: $('#customerDriverEmail')
+    });
+    cusValidations2.push({
+        cusReg: regExCusNic2,
+        cusField: $('#customerNic')
+    });
+    cusValidations2.push({
+        cusReg: regExCusLicense2,
+        cusField: $('#customerLicence')
+    });
+    cusValidations2.push({
+        cusReg: regExCusUserName2,
+        cusField: $('#customerUserName')
+    });
+    cusValidations2.push({
+        cusReg: regExCusPassword2,
+        cusField: $('#customerPassword')
+    });
+
+    // disable tab key of all four text fields using grouping selector in CSS
+    $("#userFirstName, #userLastName, #customerContactNo, #customerAddress,#customerDriverEmail, #customerNic, #customerLicence, #customerUserName,#customerPassword").on('keydown', function (event) {
+        if (event.key === "Tab") {
+            event.preventDefault();
+        }
+    });
+
+    // grouping all fields keyup event using and call check validity function
+    $("#userFirstName, #userLastName, #customerContactNo, #customerAddress,#customerDriverEmail, #customerNic, #customerLicence, #customerUserName,#customerPassword").on('keyup', function (event) {
+        checkCusValidity();
+    });
+
+    // grouping all fields blur event using and call check validity function
+    $("#userFirstName, #userLastName, #customerContactNo, #customerAddress,#customerDriverEmail, #customerNic, #customerLicence, #customerUserName,#customerPassword").on('blur', function (event) {
+        checkCusValidity();
+    });
+
+    // customer-first-name focus event
+    $("#userFirstName").on('keydown', function (event) {
+        if (event.key === "Enter" && cusCheck(regExCusFirstName, $("#userFirstName"))) {
+            $("#userLastName").focus();
+        } else {
+            focusCusText($("#userFirstName"));
+        }
+    });
+
+    // customer-last-name focus event
+    $("#userLastName").on('keydown', function (event) {
+        if (event.key === "Enter" && cusCheck(regExCusLastName, $("#userLastName"))) {
+            focusCusText($("#customerContactNo"));
+        }
+    });
+
+    // customer-contact focus event
+    $("#customerContactNo").on('keydown', function (event) {
+        if (event.key === "Enter" && cusCheck(regExCusContactNumber, $("#customerContactNo"))) {
+            focusCusText($("#customerAddress"));
+        }
+    });
+
+    // customer-address focus event
+    $("#customerAddress").on('keydown', function (event) {
+        if (event.key === "Enter" && cusCheck(regExCusAddress, $("#customerAddress"))) {
+            focusCusText($("#customerDriverEmail"));
+        }
+    });
+
+    // customer-email focus event
+    $("#customerDriverEmail").on('keydown', function (event) {
+        if (event.key === "Enter" && cusCheck(regExCusEmailAddress, $("#customerDriverEmail"))) {
+            focusCusText($("#customerNic"));
+        }
+    });
+
+    // customer-nic focus event
+    $("#customerNic").on('keydown', function (event) {
+        if (event.key === "Enter" && cusCheck(regExCusNic, $("#customerNic"))) {
+            $("#imgNiC").focus();
+        }
+    });
+
+    // customer-nic-img focus event
+    $("#imgNiC").on('keydown', function (event) {
+        if (event.key === "Enter") {
+            focusCusText($("#customerLicence"));
+        }
+    });
+
+    // customer-licence focus event
+    $("#customerLicence").on('keydown', function (event) {
+        if (event.key === "Enter" && cusCheck(regExCusLicense, $("#customerLicence"))) {
+            $("#imgLicence").focus();
+        }
+    });
+
+    // customer-licence-img focus event
+    $("#imgLicence").on('keydown', function (event) {
+        if (event.key === "Enter") {
+            focusCusText($("#customerUserName"));
+        }
+    });
+
+    // customer-user-name focus event
+    $("#customerUserName").on('keydown', function (event) {
+        if (event.key === "Enter" && cusCheck(regExCusUserName, $("#customerUserName"))) {
+            focusCusText($("#customerPassword"));
+        }
+    });
+
+    // customer-password focus event
+    $("#customerPassword").on('keydown', function (event) {
+        if (event.key === "Enter" && cusCheck(regExCusPassword, $("#customerPassword"))) {
+            $("#updateCustomer").focus();
+        }
+    });
+
+    // check validity function
+    function checkCusValidity() {
+        let cusErrorCount2 = 0;
+        for (let cusValidation2 of cusValidations2) {
+            if (cusCheck(cusValidation2.cusReg, cusValidation2.cusField)) {
+                textItemSuccess(cusValidation2.cusField, "");
+            } else {
+                cusErrorCount2 = cusErrorCount2 + 1;
+                setItemTextError(cusValidation2.cusField);
+            }
+        }
+        setItemButtonState(cusErrorCount2);
+    }
+
+    // check regex pattern function
+    function cusCheck(regex, txtField) {
+        let cusInputValue = txtField.val();
+        return regex.test(cusInputValue) ? true : false;
+    }
+
+    // error text fields function
+    function setItemTextError(txtField) {
+        if (txtField.val().length <= 0) {
+            defaultItemText(txtField, "");
+        } else {
+            txtField.css('border', '2px solid red');
+        }
+    }
+
+    // success text fields function
+    function textItemSuccess(txtField) {
+        if (txtField.val().length <= 0) {
+            defaultItemText(txtField, "");
+        } else {
+            txtField.css('border', '2px solid green');
+        }
+    }
+
+    // default text fields function
+    function defaultItemText(txtField) {
+        txtField.css("border", "1px solid #ced4da");
+    }
+
+    // focus texts function
+    function focusCusText(txtField) {
+        txtField.focus();
+    }
+
+    // button state function
+    function setItemButtonState(value) {
+        if (value > 0) {
+            $("#updateCustomer").attr('disabled', true);
+            $("#deleteCustomer").attr('disabled', true);
+        } else {
+            $("#updateCustomer").attr('disabled', false);
+            $("#deleteCustomer").attr('disabled', false);
+        }
+    }
+
+    // Regex Patterns End
+
+    //<!------------------------------------ RegEx Car ------------------------------------>
+
+    <!-- start regex patterns -->
+    const regExName = /^[A-z 0-9]{3,20}$/;
+    const regExBrand = /^[A-z ]{3,20}$/;
+    const regExNoPassengers = /^[0-9 ]{1,2}$/;
+    const regExDailyRate = /^[0-9 ]{1,20}$/;
+    const regExMonthlyRate = /^[0-9 ]{1,20}$/;
+    const regExKM = /^[0-9 ]{1,4}$/;
+    const regExRegNumber = /^[A-Z]{2}-?\d{3}|^[A-Z]{3}-?\d{3}|^\d{3}-?[A-Z]{3}$/;
+    const regExFreeMileage = /^[0-9 ]{1,4}$/;
+    const regExColor = /^[A-z ]{3,20}$/;
+    <!-- end regex patterns -->
+
+    // customer validation array
+    let carValidations = [];
+
+    carValidations.push({
+        carReg: regExName,
+        carField: $('#carName')
+    });
+    carValidations.push({
+        carReg: regExBrand,
+        carField: $('#carBrand')
+    });
+    carValidations.push({
+        carReg: regExNoPassengers,
+        carField: $('#numberOfPassengers')
+    });
+    carValidations.push({
+        carReg: regExDailyRate,
+        carField: $('#dailyRate')
+    });
+    carValidations.push({
+        carReg: regExMonthlyRate,
+        carField: $('#monthlyRate')
+    });
+    carValidations.push({
+        carReg: regExKM,
+        carField: $('#priceExtraKM')
+    });
+    carValidations.push({
+        carReg: regExRegNumber,
+        carField: $('#registrationNumber')
+    });
+    carValidations.push({
+        carReg: regExFreeMileage,
+        carField: $('#freeMileage')
+    });
+    carValidations.push({
+        carReg: regExColor,
+        carField: $('#color')
+    });
+
+    // disable tab key of all four text fields using grouping selector in CSS
+    $("#carName, #carBrand, #numberOfPassengers, #dailyRate,#monthlyRate, #priceExtraKM, #registrationNumber, #freeMileage,#color").on('keydown', function (event) {
+        if (event.key === "Tab") {
+            event.preventDefault();
+        }
+    });
+
+    // grouping all fields keyup event using and call check validity function
+    $("#carName, #carBrand, #numberOfPassengers, #dailyRate,#monthlyRate, #priceExtraKM, #registrationNumber, #freeMileage,#color").on('keyup', function (event) {
+        checkCarValidity();
+    });
+
+    // grouping all fields blur event using and call check validity function
+    $("#carName, #carBrand, #numberOfPassengers, #dailyRate,#monthlyRate, #priceExtraKM, #registrationNumber, #freeMileage,#color").on('blur', function (event) {
+        checkCarValidity();
+    });
+
+    // car-name focus event
+    $("#carName").on('keydown', function (event) {
+        if (event.key === "Enter" && carCheck(regExName, $("#carName"))) {
+            $("#carBrand").focus();
+        } else {
+            focusCarText($("#carName"));
+        }
+    });
+
+    // car-brand focus event
+    $("#carBrand").on('keydown', function (event) {
+        if (event.key === "Enter" && carCheck(regExBrand, $("#carBrand"))) {
+            $("#carType").focus();
+        }
+    });
+
+    // car-type focus event
+    $("#carType").on('keydown', function (event) {
+        if (event.key === "Enter") {
+            $("#frontView").focus();
+        }
+    });
+
+    // car-frontView focus event
+    $("#frontView").on('keydown', function (event) {
+        if (event.key === "Enter") {
+            $("#backView").focus();
+        }
+    });
+
+    // car-backView focus event
+    $("#backView").on('keydown', function (event) {
+        if (event.key === "Enter") {
+            $("#sideView").focus();
+        }
+    });
+
+    // car-sideView focus event
+    $("#sideView").on('keydown', function (event) {
+        if (event.key === "Enter") {
+            $("#interiorImage").focus();
+        }
+    });
+
+    // car-interiorImage focus event
+    $("#interiorImage").on('keydown', function (event) {
+        if (event.key === "Enter") {
+            focusCarText($("#numberOfPassengers"));
+        }
+    });
+
+    // car-number-of-passengers focus event
+    $("#numberOfPassengers").on('keydown', function (event) {
+        if (event.key === "Enter" && carCheck(regExNoPassengers, $("#numberOfPassengers"))) {
+            $("#transmissionType").focus();
+        }
+    });
+
+    // car-transmission-type focus event
+    $("#transmissionType").on('keydown', function (event) {
+        if (event.key === "Enter") {
+            $("#fuelType").focus();
+        }
+    });
+
+    // car-fuel-type focus event
+    $("#fuelType").on('keydown', function (event) {
+        if (event.key === "Enter") {
+            focusCarText($("#dailyRate"));
+        }
+    });
+
+    // car-daily-rate focus event
+    $("#dailyRate").on('keydown', function (event) {
+        if (event.key === "Enter" && carCheck(regExDailyRate, $("#dailyRate"))) {
+            focusCarText($("#monthlyRate"));
+        }
+    });
+
+    // car-monthly-rate focus event
+    $("#monthlyRate").on('keydown', function (event) {
+        if (event.key === "Enter" && carCheck(regExMonthlyRate, $("#monthlyRate"))) {
+            focusCarText($("#priceExtraKM"));
+        }
+    });
+
+    // car-price-extra-KM focus event
+    $("#priceExtraKM").on('keydown', function (event) {
+        if (event.key === "Enter" && carCheck(regExKM, $("#priceExtraKM"))) {
+            focusCarText($("#registrationNumber"));
+        }
+    });
+
+    // car-registration-number focus event
+    $("#registrationNumber").on('keydown', function (event) {
+        if (event.key === "Enter" && carCheck(regExRegNumber, $("#registrationNumber"))) {
+            focusCarText($("#freeMileage"));
+        }
+    });
+
+    // car-free-mileage focus event
+    $("#freeMileage").on('keydown', function (event) {
+        if (event.key === "Enter" && carCheck(regExFreeMileage, $("#freeMileage"))) {
+            focusCarText($("#color"));
+        }
+    });
+
+    // car-color focus event
+    $("#color").on('keydown', function (event) {
+        if (event.key === "Enter" && carCheck(regExColor, $("#color"))) {
+            $("#carAvailability").focus();
+        }
+    });
+
+    // car-availability focus event
+    $("#carAvailability").on('keydown', function (event) {
+        if (event.key === "Enter") {
+            $("#addCarBtn").focus();
+        }
+    });
+
+
+    // check validity function
+    function checkCarValidity() {
+        let carErrorCount = 0;
+        for (let carValidation of carValidations) {
+            if (carCheck(carValidation.carReg, carValidation.carField)) {
+                textCarSuccess(carValidation.carField, "");
+            } else {
+                carErrorCount = carErrorCount + 1;
+                setCarTextError(carValidation.carField);
+            }
+        }
+        setCarButtonState(carErrorCount);
+    }
+
+    // check regex pattern function
+    function carCheck(regex, txtField) {
+        let carInputValue = txtField.val();
+        return regex.test(carInputValue) ? true : false;
+    }
+
+    // error text fields function
+    function setCarTextError(txtField) {
+        if (txtField.val().length <= 0) {
+            defaultCarText(txtField, "");
+        } else {
+            txtField.css('border', '2px solid red');
+        }
+    }
+
+    // success text fields function
+    function textCarSuccess(txtField) {
+        if (txtField.val().length <= 0) {
+            defaultCarText(txtField, "");
+        } else {
+            txtField.css('border', '2px solid green');
+        }
+    }
+
+    // default text fields function
+    function defaultCarText(txtField) {
+        txtField.css("border", "1px solid #ced4da");
+    }
+
+    // focus texts function
+    function focusCarText(txtField) {
+        txtField.focus();
+    }
+
+    // button state function
+    function setCarButtonState(value) {
+        if (value > 0) {
+            $("#addCarBtn").attr('disabled', true);
+            $("#updateCar").attr('disabled', true);
+        } else {
+            $("#addCarBtn").attr('disabled', false);
+            $("#updateCar").attr('disabled', false);
+        }
+    }
+
+    // Regex Patterns End
+
+    let val = $("#paymentDetailsPickFromDate").val();
+    console.log(val);
+</script>
+</body>
+</html>

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Easy Car | Sign Up</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Full Stack Software Developer In Sri Lanka">
+    <meta name="author" content="Pasan Pahasara">
+    <meta name="owner" content="Pasan Pahasara">
+    <link rel="shortcut icon" href="../assets/img/title.png">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&family=Ubuntu&display=swap"
+          rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+
+    <!-- CSS -->
+    <link href="../assets/css/vendor/icons.min.css" rel="stylesheet" type="text/css">
+    <link href="../assets/css/vendor/app.min.css" rel="stylesheet" type="text/css" id="light-style">
+    <style>
+        *{
+            font-family: 'Ubuntu', sans-serif;
+        }
+    </style>
+</head>
+<body>
+<!-- Start Back Button -->
+<div class="container-fluid">
+    <a href="../pages/logIn.html" aria-labelledby="aria-label-txt">
+        <span id="aria-label-txt"><ion-icon name="arrow-back" style="font-size: 3rem; position: absolute; margin-top: 1rem;"></ion-icon></span>
+    </a>
+</div>
+<!-- End Back Button -->
+
+<!-- Start Customer Content-->
+<div class="container py-5 pb-2" id="manageCustomer">
+
+    <!-- start content-->
+    <div class="row g-0 justify-content-center align-items-center">
+        <!-- start col-->
+        <div class="col-xl-8 mb-lg-0">
+            <!-- start card-->
+            <div class="card cascading-right" style="border-radius: 1rem;">
+                <!-- start card-body -->
+                <div class="card-body shadow-5 px-4">
+                    <!-- start page title -->
+                    <div class="row">
+                        <div class="col-12">
+                            <div>
+                                <div class="page-title-left">
+                                    <h2 class="fw-bold mb-4">Sign Up</h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end page title -->
+
+                    <!-- start row -->
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <form id="customerForm" class="row">
+                                <section id="sec1Customer" class="col-xl-4">
+                                    <div class="mb-3">
+                                        <label class="form-label" for="cusRegID">User ID<span
+                                                class="text-danger">*</span></label>
+                                        <input class="form-control" id="cusRegID" readonly name="user_Id"
+                                               placeholder="Register ID" type="text">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label" for="cusFirstName">First Name<span
+                                                class="text-danger">*</span></label>
+                                        <input class="form-control" id="cusFirstName" name="firstName"
+                                               placeholder="Eg :- Pasan" type="text">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label" for="cusLastName">Last Name<span
+                                                class="text-danger">*</span></label>
+                                        <input class="form-control" id="cusLastName" name="lastName"
+                                               placeholder="Eg :- Pahasara" type="text">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label" for="contactNo">Contact Number<span
+                                                class="text-danger">*</span></label>
+                                        <input class="form-control" id="contactNo" name="contact_No"
+                                               placeholder="Eg :- 0714548877" type="text">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label" for="address">Address<span
+                                                class="text-danger">*</span></label>
+                                        <input class="form-control" id="address" name="address"
+                                               placeholder="Eg :- Panadura" type="text">
+                                    </div>
+                                </section>
+                                <section id="sec2Customer" class="col-xl-4">
+                                    <div class="mb-3">
+                                        <label class="form-label" for="cusEmail">Email<span
+                                                class="text-danger">*</span></label>
+                                        <input class="form-control" id="cusEmail" name="email"
+                                               placeholder="Eg :- pahasara@gmail.com" type="text">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label" for="nicNo">NIC NO<span
+                                                class="text-danger">*</span></label>
+                                        <input class="form-control" id="nicNo" name="nic"
+                                               placeholder="Eg :- 781596458v / 200175968215" type="text">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label" for="imgNiC">NIC Image<span
+                                                class="text-danger">*</span></label>
+                                        <input class="form-control" id="imgNiC" name="nic_Img"
+                                               placeholder="NIC NO" type="file">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label" for="cusLicence">Licence No<span
+                                                class="text-danger">*</span></label>
+                                        <input class="form-control" id="cusLicence" name="license_No"
+                                               placeholder="Eg :- 587459621587" type="text">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label" for="imgLicence">Licence Image<span
+                                                class="text-danger">*</span></label>
+                                        <input class="form-control" id="imgLicence" name="license_Img"
+                                               placeholder="NIC NO" type="file">
+                                    </div>
+                                </section>
+                                <section id="sec3Customer" class="col-xl-4">
+                                    <div class="mb-3">
+                                        <label class="form-label" for="role_Type">Role Type<span
+                                                class="text-danger">*</span></label>
+                                        <select class="form-control" id="role_Type" name="role_Type">
+                                            <option value="REGISTERED_USER">REGISTERED USER</option>
+                                        </select>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="cusUserName" class="form-label">User Name<span
+                                                class="text-danger">*</span></label>
+                                        <div class="input-group has-validation">
+                                            <span class="input-group-text" id="inputGroupPrepend">@</span>
+                                            <input type="text" class="form-control" id="cusUserName"
+                                                   name="user_Name" placeholder="Eg :- pahasara"
+                                                   aria-describedby="inputGroupPrepend" required>
+                                            <div class="invalid-feedback">
+                                                Please choose a username.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="cusPassword" class="form-label">Password<span
+                                                class="text-danger">*</span></label>
+                                        <div class="input-group input-group-merge">
+                                            <input type="password" id="cusPassword" name="password"
+                                                   class="form-control" placeholder="Eg :- vwYnL145">
+                                            <div class="input-group-text" data-password="false">
+                                                <ion-icon name="eye-off"></ion-icon>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <button type="button" class="btn btn-primary btn" id="addCustomerBtn"
+                                                style="border-radius: 1.5rem;">Sign Up
+                                        </button>
+                                    </div>
+                                    <!-- Register buttons -->
+                                    <div class="text-center">
+                                        <p>or sign up with:</p>
+                                        <button type="button" class="btn mx-1">
+                                            <ion-icon name="logo-facebook"></ion-icon>
+                                        </button>
+
+                                        <button type="button" class="btn mx-1">
+                                            <ion-icon name="logo-google"></ion-icon>
+                                        </button>
+
+                                        <button type="button" class="btn mx-1">
+                                            <ion-icon name="logo-twitter"></ion-icon>
+                                        </button>
+
+                                        <button type="button" class="btn btn-floating mx-1">
+                                            <ion-icon name="logo-github"></ion-icon>
+                                        </button>
+                                    </div>
+                                </section>
+                            </form>
+                        </div> <!-- end col-->
+                    </div>
+                    <!-- end row -->
+                </div>
+                <!-- end card-body -->
+            </div>
+            <!-- end card-->
+        </div>
+        <!-- end col-->
+
+        <!-- start image -->
+        <div id="imgCar" class="v-back col-lg-4 mb-lg-0 pt-3">
+            <img src="../assets/img/signUp/signUp.jpg" class="w-100 rounded-3 shadow-lg"
+                 style="height: 37rem;" alt=""/>
+        </div>
+        <!-- end image -->
+    </div>
+    <!-- end content-->
+</div>
+<!-- End Customer Content-->
+
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+
+<script src="../assets/jQuery/jquery-3.6.0.min.js"></script>
+<script src="../controller/userController.js"></script>
+</body>
+</html>

@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords"
+          content="IJSE,GDSE,AAD,Car Rental Service,Pasan,Pahasara,Pasan Pahasara,Pasan Pahasara GDSE60">
+    <meta name="description" content="Full Stack Software Developer In Sri Lanka">
+    <meta name="author" content="Pasan Pahasara">
+    <meta name="owner" content="Pasan Pahasara">
+    <link rel="shortcut icon" href="./assets/img/title.png">
+
+    <title>Easy Car Rental</title>
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="assets/css/swiperCSS/swiper-bundle.min.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+    <style>
+        .swiper {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .swiper-slide img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .swiper {
+            width: 100%;
+            height: 100%;
+        }
+
+        .featured-car-card {
+            margin-right: 1rem;
+            margin-left: 1rem;
+            width: 18rem;
+        }
+
+    </style>
+</head>
+
+<body>
+<!-- header section start -->
+<header class="header" data-header>
+    <div class="container">
+        <div class="overlay" data-overlay></div>
+        <a href="#" class="logo" style="display: flex;">
+            <img src="assets/img/favicon.png" alt="Easy Car Rental logo" style="width: 9rem;">
+            <span style="font-size: 20px; font-weight: bolder; color: #32324E;margin-top: 1px;margin-top: 13px;margin-left: 11px;">EᗩSY</span><span
+                style="display: flex; margin-top: 17px; color: #6D76E9;margin-left: 2px;"> car rental</span>
+        </a>
+        <nav class="navbar" data-navbar>
+            <ul class="navbar-list">
+                <li>
+                    <a href="#home" class="navbar-link" data-nav-link>Home</a>
+                </li>
+                <li>
+                    <a href="#about" class="navbar-link" data-nav-link>About us</a>
+                </li>
+                <li>
+                    <a href="#reviews" class="navbar-link" data-nav-link>Reviews</a>
+                </li>
+                <li>
+                    <a href="#contact" class="navbar-link" data-nav-link>Contact</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="header-actions">
+            <div class="header-contact">
+                <a href="tel:719568877" class="contact-link">+94 719 568 877</a>
+                <span class="contact-time">Mon - Sat: 9:00 am - 6:00 pm</span>
+            </div>
+            <a href="#" class="btn" id="#featured-car" aria-labelledby="aria-label-txt">
+                <ion-icon name="car-outline"></ion-icon>
+                <span id="aria-label-txt">Explore cars</span>
+            </a>
+            <a href="../Front-End/pages/logIn.html" target="_self" class="btn user-btn" aria-label="Profile">
+                <ion-icon name="person-outline"></ion-icon>
+            </a>
+            <button class="nav-toggle-btn" data-nav-toggle-btn aria-label="Toggle Menu">
+                <span class="one"></span>
+                <span class="two"></span>
+                <span class="three"></span>
+            </button>
+        </div>
+    </div>
+</header>
+<!-- header section ends -->
+
+<!-- scroll up button start -->
+<a href="#" id="scroll_up_btn"><i aria-label="Profile"></i></a>
+<!-- scroll up button end -->
+<main>
+    <article>
+        <!-- hero section start -->
+        <section class="section hero" id="home">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-details">
+                        <h2 class="h1 hero-title">
+                            <span>Looking </span>to <br> rent a car</h2>
+                        <p class="hero-text">
+                            Best Car Rental Company in Panadura city!
+                        </p>
+                        <div class="app-stores">
+                            <img src="assets/img/hero/ios.png">
+                            <img src="assets/img/hero/play.png">
+                            <div class="d-flex" data-aos="fade-up" data-aos-delay="200">
+                                <a href="https://vimeo.com/290450151"
+                                   class="glightbox btn-watch-video d-flex align-items-center"><i
+                                        class="bi bi-play-circle"></i><span>Watch Video</span></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hero-banner"></div>
+                    <!--                    <div class="form-container">-->
+                    <!--                        <form action="">-->
+                    <!--                            <div class="input-box">-->
+                    <!--                                <span>Location</span>-->
+                    <!--                                <input type="search" name="" id="location" placeholder="Search Places">-->
+                    <!--                            </div>-->
+                    <!--                            <div class="input-box">-->
+                    <!--                                <span>Pick-Up Date</span>-->
+                    <!--                                <input type="date" name="" id="date">-->
+                    <!--                            </div>-->
+                    <!--                            <div class="input-box">-->
+                    <!--                                <span>Return Date</span>-->
+                    <!--                                <input type="date" name="" id="date2">-->
+                    <!--                            </div>-->
+                    <!--                            <button type="submit" name="" id="submit" class="btn">Search</button>-->
+                    <!--                        </form>-->
+                    <!--                    </div>-->
+                </div>
+            </div>
+        </section>
+        <!-- hero section ends -->
+
+        <!-- get start section start -->
+        <section class="section get-start">
+            <div class="container">
+                <div id="heading-side" class="heading-side">
+                    <span>How Its Work</span>
+                    <h1>Rent With 4 Easy Steps</h1>
+                </div>
+                <ul class="get-start-list ">
+                    <li>
+                        <div class="get-start-card ">
+                            <div class="card-icon icon-1">
+                                <ion-icon name="person-add-outline"></ion-icon>
+                            </div>
+                            <h3 class="card-title">Create a profile</h3>
+                            <p class="card-text">
+                                If you are going to use a passage of Lorem Ipsum, you need to be sure.
+                            </p>
+                            <a href="#" class="card-link">Get started</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="get-start-card">
+                            <div class="card-icon icon-2">
+                                <ion-icon name="car-outline"></ion-icon>
+                            </div>
+                            <h3 class="card-title">Tell us what car you want</h3>
+                            <p class="card-text">
+                                Various versions have evolved over the years, sometimes by accident, sometimes on
+                                purpose
+                            </p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="get-start-card">
+                            <div class="card-icon icon-3">
+                                <ion-icon name="person-outline"></ion-icon>
+                            </div>
+                            <h3 class="card-title">Match with seller</h3>
+                            <p class="card-text">
+                                It to make a type specimen book. It has survived not only five centuries, but also the
+                                leap into electronic
+                            </p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="get-start-card">
+                            <div class="card-icon icon-4">
+                                <ion-icon name="card-outline"></ion-icon>
+                            </div>
+                            <h3 class="card-title">Make a deal</h3>
+                            <p class="card-text">
+                                There are many variations of passages of Lorem available, but the majority have suffered
+                                alteration
+                            </p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <!-- get start section ends -->
+
+        <!-- featured car section start -->
+        <section class="section featured-car" id="featured-car">
+            <div class="container">
+
+                <div class="heading-side">
+                    <h2 class="h2 section-title">Featured cars</h2>
+                </div>
+
+                <!-- Swiper -->
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper" id="carSection">
+                        <div class="swiper-slide"></div>
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </section>
+        <!-- featured car section ends -->
+
+        <!-- about section start -->
+        <section class="section about" id="about">
+            <div class="container">
+                <div class="heading">
+                    <span>About Us</span>
+                    <h1>Best Customer Experience</h1>
+                </div>
+                <div class="about-container">
+                    <div class="about-img">
+                        <img src="assets/img/about/about.png" alt="">
+                    </div>
+                    <div class="about-text">
+                        <span>About Us</span>
+                        <p>Easy car rental refers to a service that allows individuals or businesses to rent a car for a
+                            short period of time. It is a convenient alternative to owning a car, especially for those
+                            who only need to use a vehicle occasionally or for a specific purpose, such as travel or
+                            moving. With easy car rental, customers can choose from a range of car models and sizes to
+                            suit their needs, and typically pay a daily or monthly rate, which includes Loss Damage
+                            Waiver fees.</p>
+                        <p>Easy car rental companies have become increasingly popular in recent years,
+                            providing a flexible and affordable way for people to access a vehicle without the costs and
+                            responsibilities associated with ownership.</p>
+                        <a href="#" class="btn">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- about section ends -->
+
+        <!-- reviews section start -->
+        <section class="section reviews" id="reviews">
+            <div class="slide-container container swiper">
+                <div class="heading">
+                    <span>Testimonials</span>
+                    <h1>What Are Clients Saying</h1>
+                </div>
+                <div class="slide-content">
+                    <div class="card-wrapper swiper-wrapper">
+                        <div class="card swiper-slide">
+                            <div class="image-content">
+                                <span class="image-back"></span>
+                                <div class="card-image">
+                                    <img src="assets/img/testimonials/profile1.jpg" alt="" class="card-img">
+                                </div>
+                            </div>
+                            <div class="card-content">
+                                <h2 class="name">David N. Dell</h2>
+                                <p class="description">Everything about Easy Car Rental exceeded our expectations. We
+                                    would definitely book from you again. You made our stay in PR the best!!!</p>
+                                <button class="btn">View More</button>
+                            </div>
+                        </div>
+                        <div class="card swiper-slide">
+                            <div class="image-content">
+                                <span class="image-back"></span>
+                                <div class="card-image">
+                                    <img src="assets/img/testimonials/profile2.jpg" alt="" class="card-img">
+                                </div>
+                            </div>
+                            <div class="card-content">
+                                <h2 class="name">Dominick A. Gray</h2>
+                                <p class="description">I\'ve rented from Rugged Rental many times. They\'ve always
+                                    provided the vehicle I reserved or better. Prompt and courteous.</p>
+                                <button class="btn">View More</button>
+                            </div>
+                        </div>
+                        <div class="card swiper-slide">
+                            <div class="image-content">
+                                <span class="image-back"></span>
+                                <div class="card-image">
+                                    <img src="assets/img/testimonials/profile3.jpg" alt="" class="card-img">
+                                </div>
+                            </div>
+                            <div class="card-content">
+                                <h2 class="name">jacqueline N. Nel</h2>
+                                <p class="description">I did my research on three competing car rental companies and
+                                    Esay Car Rentals provided the best deal in terms of price and flexibility</p>
+                                <button class="btn">View More</button>
+                            </div>
+                        </div>
+                        <div class="card swiper-slide">
+                            <div class="image-content">
+                                <span class="image-back"></span>
+
+                                <div class="card-image">
+                                    <img src="assets/img/testimonials/profile4.jpg" alt="" class="card-img">
+                                </div>
+                            </div>
+                            <div class="card-content">
+                                <h2 class="name">Jeff N. Hood</h2>
+                                <p class="description">Very friendly, professional staff, process was smooth in and out.
+                                    Car power was below the island's hilly conditions.</p>
+                                <button class="btn">View More</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-button-next swiper-navBtn"></div>
+                    <div class="swiper-button-prev swiper-navBtn"></div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </section>
+        <!-- reviews section ends -->
+
+        <!-- contact section start -->
+        <section class="contact" id="contact">
+            <div class="container">
+                <div class="heading">
+                    <span>contact us</span>
+                    <h1>I'M VERY RESPONSIVE TO MESSAGE</h1>
+                </div>
+                <div class="row">
+                    <iframe class="map"
+                            src=" https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63397.34482830807!2d79.89441649307884!3d6.729034954627545!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae24616c169e7c3%3A0xd21e80c970651d56!2sPanadura!5e0!3m2!1sen!2slk!4v1676269191734!5m2!1sen!2slk "
+                            allowfullscreen=" " loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <form action=" ">
+                        <h1>get in touch</h1>
+                        <input type="text" placeholder="name" class="box">
+                        <input type="email" placeholder="email" class="box">
+                        <input type="tel" placeholder="subject" class="box">
+                        <textarea placeholder="message" class="box" cols="30" rows="10"></textarea>
+                        <input type="submit" value="send message" class="btn">
+                    </form>
+                </div>
+            </div>
+        </section>
+        <!-- contact section ends -->
+
+    </article>
+</main>
+<!-- footer section start -->
+<footer class="footer">
+    <div class="container">
+
+        <div class="footer-top">
+
+            <div class="footer-brand">
+                <a href="#" class="logo">
+                    <img src="" alt="Car Rental System Logo">
+                </a>
+                <p class="footer-text">
+                    With a diverse fleet of 50 cars, Easy Car Rental Private Limited offers its customers an exciting
+                    and fun choice to find cheap taxis in Panadura with 5 years of reliability. </p>
+            </div>
+            <ul class="footer-list">
+                <li>
+                    <p class="footer-list-title">Company</p>
+                </li>
+                <li>
+                    <a href="#about" class="footer-link">About us</a>
+                </li>
+                <li>
+                    <a href="#reviews" class="footer-link">Reviews</a>
+                </li>
+                <li>
+                    <a href="#contact" class="footer-link">Contacts</a>
+                </li>
+            </ul>
+            <ul class="footer-list">
+                <li>
+                    <p class="footer-list-title">Support</p>
+                </li>
+                <li>
+                    <a href="#" class="footer-link">Help center</a>
+                </li>
+                <li>
+                    <a href="#" class="footer-link">Ask a question</a>
+                </li>
+                <li>
+                    <a href="#" class="footer-link">Privacy policy</a>
+                </li>
+                <li>
+                    <a href="#" class="footer-link">Terms & conditions</a>
+                </li>
+            </ul>
+            <ul class="footer-list">
+                <li class="footer-text">
+                    <p class="footer-list-title">Address</p>
+                    <p class="footer-fonder">N0. 200,<br>Galle Road,<br>Panadura</p>
+                </li>
+            </ul>
+        </div>
+        <div class="footer-bottom">
+            <ul class="social-list">
+                <li>
+                    <a href="#" class="social-link">
+                        <ion-icon name="logo-facebook"></ion-icon>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="social-link">
+                        <ion-icon name="logo-instagram"></ion-icon>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="social-link">
+                        <ion-icon name="logo-twitter"></ion-icon>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="social-link">
+                        <ion-icon name="logo-linkedin"></ion-icon>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="social-link">
+                        <ion-icon name="logo-github"></ion-icon>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="social-link">
+                        <ion-icon name="mail-outline"></ion-icon>
+                    </a>
+                </li>
+            </ul>
+            <p class="copyright">
+                &copy; 2023 <a href="#">Pasan Pahasara</a>. All Rights Reserved
+            </p>
+        </div>
+    </div>
+</footer>
+<!-- footer section ends -->
+
+<!--- IonIcon link-->
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<!-- Swiper JS -->
+<script src="assets/js/swiperJs/swiper-bundle.min.js"></script>
+<!-- Scroller JS -->
+<script src="https://unpkg.com/scrollreveal "></script>
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+<!-- jQuery -->
+<script src="assets/jQuery/jquery-3.6.0.min.js"></script>
+<!-- JS -->
+<script src="controller/scriptController.js"></script>
+<script>
+    const sr = ScrollReveal({
+        distance: '60px',
+        duration: 1800,
+        delay: 200,
+        reset: true
+    })
+
+    sr.reveal('.hero-details', {
+        delay: 200,
+        origin: 'top'
+    })
+
+    sr.reveal('.hero-banner', {
+        delay: 200,
+        origin: 'bottom'
+    })
+
+    sr.reveal('.get-start-card', {
+        delay: 300,
+        origin: 'bottom'
+    })
+
+    sr.reveal('.slide-content', {
+        delay: 300,
+        origin: 'bottom'
+    })
+
+    sr.reveal('.form-container form', {
+        delay: 600,
+        origin: 'left'
+    })
+    sr.reveal('.heading-side', {
+        delay: 600,
+        origin: 'left'
+    })
+    sr.reveal('.heading', {
+        delay: 600,
+        origin: 'top'
+    })
+    sr.reveal('.about-container .about-text', {
+        delay: 200,
+        origin: 'bottom'
+    })
+    sr.reveal('.mySwiper', {
+        delay: 600,
+        origin: 'bottom'
+    })
+    sr.reveal('.contact .row form .box:nth-child(2)', {
+        delay: 200,
+        origin: 'top'
+    })
+    sr.reveal('.contact .row form .box:nth-child(3)', {
+        delay: 650,
+        origin: 'top'
+    })
+    sr.reveal('.contact .row form .box:nth-child(4)', {
+        delay: 850,
+        origin: 'top'
+    })
+    sr.reveal('.contact .row form .box:nth-child(5)', {
+        delay: 1050,
+        origin: 'top'
+    })
+    sr.reveal('.contact.row.map', {
+        delay: 600,
+        origin: 'left'
+    })
+
+    var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        loop: true,
+        autoplay: {
+            delay: 2500,
+            disableOnInteraction: false,
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+    });
+</script>
+</body>
+</html>

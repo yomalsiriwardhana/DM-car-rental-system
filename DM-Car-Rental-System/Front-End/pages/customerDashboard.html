@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    title>Easy Car | Customer Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Full Stack Software Developer In Sri Lanka">
+    <meta name="author" content="Pasan Pahasara">
+    <meta name="owner" content="Pasan Pahasara">
+    <link rel="shortcut icon" href="../assets/img/title.png">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&family=Ubuntu&display=swap"
+          rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dripicons/2.0.0/webfont.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dripicons/2.0.0/webfont.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../assets/css/vendor/app.min.css" id="light-style">
+
+    <style>
+        * {
+            font-family: 'Ubuntu', sans-serif;
+        }
+    </style>
+</head>
+<body class="loading"
+      data-layout-config='{"leftSideBarTheme":"dark","layoutBoxed":false, "leftSidebarCondensed":false, "leftSidebarScrollable":false,"darkMode":false, "showRightSidebarOnStart": true}'>
+<!-- Start Sidebar Wrapper-->
+<section class="wrapper">
+    <!-- Start Sidebar Content-->
+    <div class="leftside-menu">
+        <!-- light logo start -->
+        <a href="#" class="logo text-center logo-light">
+                    <span class="logo-lg mt-lg-4" style="line-height: 0.5rem;position: relative">
+                        <img src="../assets/img/favicon.png" alt="" style="width: 7rem;"><br>
+                        <span style="font-size: 20px; font-weight: bolder; color: #f0f0f0;">EᗩSY</span> car rental</span>
+            <span class="logo-sm">
+                        <img src="../assets/img/favicon.png" alt="" height="17">
+                    </span>
+        </a>
+        <!-- light logo end -->
+
+        <!-- dark logo start -->
+        <!--        <a href="#" class="logo text-center logo-dark">-->
+        <!--                    <span class="logo-lg">-->
+        <!--                        <img src="" alt="" height="16">-->
+        <!--                    </span>-->
+        <!--            <span class="logo-sm">-->
+        <!--                        <img src="" alt="" height="16">-->
+        <!--                    </span>-->
+        <!--        </a>-->
+        <!-- dark logo end -->
+
+        <!-- slideMenu start -->
+        <div class="h-100 pt-lg-1" id="leftside-menu-container" data-simplebar="">
+            <ul class="side-nav">
+
+                <li class="side-nav-title side-nav-item pt-lg-4">Navigation</li>
+
+                <li class="side-nav-item">
+                    <a href="#" id="LinkBookingResponse" class="side-nav-link">
+                        <i class="uil uil-estate"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li class="side-nav-item">
+                    <a href="#" id="LinkBookingRequest" class="side-nav-link">
+                        <i class="uil uil-repeat"></i>
+                        <span>Booking Request</span>
+                    </a>
+                </li>
+                <li class="side-nav-item">
+                    <a href="#" id="LinkManageProfile" class="side-nav-link">
+                        <i class="uil uil-user"></i>
+                        <span>Manage Profile</span>
+                    </a>
+                </li>
+                <li class="side-nav-item">
+                    <a href="#" id="LinkCustomerPayment" class="side-nav-link">
+                        <i class="uil uil-credit-card"></i>
+                        <span>Payment</span>
+                    </a>
+                </li>
+                <li class="side-nav-item">
+                    <a href="logIn.html" class="side-nav-link">
+                        <i class="uil-sign-out-alt"></i>
+                        <span> Sign Out </span>
+                    </a>
+                </li>
+            </ul>
+            <div class="clearfix"></div>
+        </div>
+        <!-- slideMenu end -->
+    </div>
+    <!-- End Sidebar Content-->
+
+    <!-- Start Page Content here -->
+    <div class="content-page">
+        <!-- start content-->
+        <div class="content">
+            <!-- Start TopBar -->
+            <div class="navbar-custom">
+                <!-- start settings -->
+                <ul class="list-unstyled topbar-menu float-end mb-0">
+                    <li class="dropdown notification-list d-lg-none">
+                        <a class="nav-link dropdown-toggle arrow-none" data-bs-toggle="dropdown" href="#" role="button"
+                           aria-haspopup="false" aria-expanded="false">
+                            <i class="uil uil-search noti-icon"></i>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-animated dropdown-lg p-0">
+                            <form class="p-3">
+                                <input type="text" class="form-control" placeholder="Search ..."
+                                       aria-label="Customer's name">
+                            </form>
+                        </div>
+                    </li>
+
+                    <li class="notification-list">
+                        <a class="nav-link end-bar-toggle" href="javascript: void(0);">
+                            <i class="dripicons-gear noti-icon"></i>
+                        </a>
+                    </li>
+                </ul>
+                <!-- end settings -->
+
+                <!-- start leftSide -->
+                <button class="button-menu-mobile open-left">
+                    <i class="uil-align-left"></i>
+                </button>
+                <!-- end leftSide -->
+
+                <!-- start searchBar -->
+                <div class="app-search dropdown d-none d-lg-block">
+                    <form>
+                        <div class="input-group">
+                            <input type="text" class="form-control dropdown-toggle" placeholder="Search..."
+                                   id="top-search">
+                            <span class="uil uil-search search-icon"></span>
+                            <button class="input-group-text btn-primary" type="submit">Search</button>
+                        </div>
+                    </form>
+                </div>
+                <!-- end searchBar -->
+            </div>
+            <!-- End TopBar -->
+
+            <!-- Start Booking Request Content-->
+            <div class="container-fluid" id="bookingRequest">
+
+                <!-- start page title -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="page-title-box">
+                            <div class="page-title-right">
+                                <ol class="breadcrumb m-0">
+                                    <li><a href="javascript: void(0);">Easy Car Rental</a></li>
+                                    <li class="uil uil-angle-right active">Booking Request</li>
+                                </ol>
+                            </div>
+                            <h4 class="page-title">Booking Request</h4>
+                        </div>
+                    </div>
+                </div>
+                <!-- end page title -->
+
+                <!-- start sort out content-->
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="card">
+                            <div class="card-body">
+
+                                <!-- start booking sort out-->
+                                <form id="sortOutForm" class="row">
+                                    <section id="secRent" class="row mx-0">
+                                        <div class="mb-2 col-xl-3 col-sm-6">
+                                            <label class="form-label" for="rentId">Rent ID<span
+                                                    class="text-danger">*</span></label>
+                                            <input class="form-control" readonly id="rentId" name="rent_Id"
+                                                   placeholder="Rent ID" type="text">
+                                        </div>
+                                        <div class="mb-2 col-xl-3 col-sm-6">
+                                            <label class="form-label" for="userID">User ID<span
+                                                    class="text-danger">*</span></label>
+                                            <input class="form-control" id="userID" readonly name="user_Id"
+                                                   placeholder="User ID" type="text">
+                                        </div>
+                                        <div class="mb-2 col-xl-3 col-sm-6">
+                                            <label class="form-label" for="carType">Car Type<span
+                                                    class="text-danger">*</span></label>
+                                            <select class="form-control" id="carType"
+                                                    name="type">
+                                                <option>- Select Car Type -</option>
+                                                <option value="GENERAL">GENERAL</option>
+                                                <option value="LUXURY">LUXURY</option>
+                                                <option value="PREMIUM">PREMIUM</option>
+                                            </select>
+                                        </div>
+                                        <div class="mb-2 col-xl-3 col-sm-6">
+                                            <label class="form-label" for="fuelType">Fuel Type<span
+                                                    class="text-danger">*</span></label>
+                                            <select class="form-control" id="fuelType"
+                                                    name="type">
+                                                <option>- Fuel Type -</option>
+                                                <option value="DIESEL">DIESEL</option>
+                                                <option value="PETROL">PETROL</option>
+                                            </select>
+                                        </div>
+                                    </section>
+                                </form>
+                                <!-- end booking sort out-->
+
+                            </div>
+                            <!-- end card-body -->
+                        </div>
+                        <!-- end card-->
+                    </div>
+                    <!-- end col-->
+                </div>
+                <!-- end sort out content-->
+
+                <!-- start wrapper content-->
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="row">
+
+                            <!-- start reservation details content-->
+                            <div class="col-xl-12 col-sm-6">
+                                <div class="card">
+                                    <div class="card-body">
+
+                                        <!-- start booking reservation details -->
+                                        <form id="reservationForm" class="row">
+                                            <section id="secReservationDetails" class="row mx-0">
+                                                <div class="mb-2 col-xl-3 col-lg-6">
+                                                    <label class="form-label" for="carID">Car ID<span
+                                                            class="text-danger">*</span></label>
+                                                    <select class="form-control" id="carID"
+                                                            name="car_Id">
+                                                        <option>- Select Car ID -</option>
+                                                    </select>
+                                                </div>
+                                                <div class="mb-2 col-xl-3 col-lg-6">
+                                                    <label class="form-label" for="carBrand">Car Brand<span
+                                                            class="text-danger">*</span></label>
+                                                    <input class="form-control" id="carBrand" readonly name="car_brand"
+                                                           placeholder="Car Brand" type="text">
+                                                </div>
+                                                <div class="mb-2 col-xl-3 col-lg-6">
+                                                    <label class="form-label" for="carModel">Car Model<span
+                                                            class="text-danger">*</span></label>
+                                                    <input class="form-control" id="carModel" readonly name="car_name"
+                                                           placeholder="Car Model" type="text">
+                                                </div>
+                                                <div class="mb-2 col-xl-3 col-lg-6">
+                                                    <label class="form-label" for="noOfPassengers">N0 Of Passengers<span
+                                                            class="text-danger">*</span></label>
+                                                    <input class="form-control" id="noOfPassengers" readonly
+                                                           name="number_Of_Passengers"
+                                                           placeholder="N0 Of Passengers" type="text">
+                                                </div>
+                                                <div class="mb-2 col-xl-3 col-lg-6">
+                                                    <label for="rentPickFromDate"
+                                                           class="form-label">Pick-Up Date<span
+                                                            class="text-danger">*</span></label>
+                                                    <input type="date" id="rentPickFromDate"
+                                                           class="form-control" name="pickUpDate"
+                                                           placeholder="Start Date">
+                                                </div>
+                                                <div class="mb-2 col-xl-3 col-lg-6">
+                                                    <label for="rentPickFromTime"
+                                                           class="form-label">PickUp Time<span
+                                                            class="text-danger">*</span></label>
+                                                    <input type="time" id="rentPickFromTime"
+                                                           class="form-control" name="pickUpTime"
+                                                           placeholder="Start Time">
+                                                </div>
+                                                <div class="mb-2 col-xl-3 col-lg-6">
+                                                    <label for="rentReturnFromDate"
+                                                           class="form-label">Return Date<span
+                                                            class="text-danger">*</span></label>
+                                                    <input type="date" id="rentReturnFromDate"
+                                                           class="form-control" name="returnDate"
+                                                           placeholder="End Date">
+                                                </div>
+                                                <div class="mb-2 col-xl-3 col-lg-6">
+                                                    <label for="rentReturnFromTime"
+                                                           class="form-label">Return Time<span
+                                                            class="text-danger">*</span></label>
+                                                    <input type="time" id="rentReturnFromTime"
+                                                           class="form-control" name="returnTime"
+                                                           placeholder="End Time">
+                                                </div>
+                                                <div class="mb-2 col-xl-3 col-lg-6">
+                                                    <label for="rentLocation"
+                                                           class="form-label">Location<span
+                                                            class="text-danger">*</span></label>
+                                                    <input type="text" id="rentLocation"
+                                                           class="form-control" name="location"
+                                                           placeholder="Location">
+                                                </div>
+                                                <div class="mt-lg-4 col-xl-3 col-lg-6">
+                                                    <!-- Checkbox -->
+                                                    <div class="form-check">
+                                                        <input type="hidden" name="driver_Availability" value="NO"/>
+                                                        <input grouping="" class="form-check-input"
+                                                               id="driverAvailability" name="driver_Availability"
+                                                               type="checkbox"
+                                                               value="YES"/>
+                                                        <label class="form-check-label" for="driverAvailability">Need A
+                                                            Driver</label>
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3 d-grid gap-2 gap-md-0 d-md-flex justify-content-md-end">
+                                                    <button type="button" class="btn btn-success btn me-md-1"
+                                                            id="addCartBtn">
+                                                        Cart
+                                                    </button>
+                                                    <button type="button" class="btn btn-primary btn"
+                                                            id="reservationBtn">
+                                                        Reservation Car
+                                                    </button>
+                                                </div>
+                                            </section>
+                                        </form>
+                                        <!-- end booking reservation details -->
+
+                                    </div>
+                                    <!-- end card-body -->
+                                </div>
+                                <!-- end card-->
+                            </div>
+                            <!-- end reservation details content-->
+
+                            <!-- start images content-->
+                            <div class="col-xl-12 col-sm-6">
+                                <div class="card">
+                                    <div class="card-body">
+
+                                        <!-- start booking car images -->
+                                        <div id="imagesForm" class="row">
+                                            <section id="secCarImages"
+                                                     class="row mx-0 gap-3 d-flex justify-content-center align-items-center">
+                                                <div id="frontImage" class="col-xl-4">
+                                                </div>
+                                                <div id="interiorImage" class="col-xl-3">
+                                                </div>
+                                                <div id="sideImage" class="col-xl-4"></div>
+                                            </section>
+                                        </div>
+                                        <!-- end booking car images -->
+
+                                    </div>
+                                    <!-- end card-body -->
+                                </div>
+                                <!-- end card-->
+                            </div>
+                            <!-- end images content-->
+
+                        </div>
+                    </div>
+                </div>
+                <!-- end wrapper content-->
+
+                <!-- start cart table content-->
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="card">
+                            <div class="card-body">
+
+                                <!-- start booking cart table -->
+                                <div class="table-responsive-xxl table-nowrap">
+                                    <table class="table table-centered mb-0">
+                                        <thead class="btn-primary">
+                                        <tr>
+                                            <th>Car ID</th>
+                                            <th>Pick-Up Date</th>
+                                            <th>Pick-Up Time</th>
+                                            <th>Return Date</th>
+                                            <th>Return Time</th>
+                                            <th>Request Type</th>
+                                            <th>Location</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody id="tblRentCart">
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <!-- end booking cart table -->
+
+                            </div>
+                            <!-- end card-body -->
+                        </div>
+                        <!-- end card-->
+                    </div>
+                    <!-- end col-->
+                </div>
+                <!-- end cart table content-->
+
+            </div>
+            <!-- End Booking Request Content-->
+
+            <!-- Start Booking Response Content-->
+            <div class="container-fluid" id="bookingResponse">
+
+                <!-- start page title -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="page-title-box">
+                            <div class="page-title-right">
+                                <ol class="breadcrumb m-0">
+                                    <li><a href="javascript: void(0);">Easy Car Rental</a></li>
+                                    <li class="uil uil-angle-right active">Booking Response</li>
+                                </ol>
+                            </div>
+                            <h4 class="page-title">Booking Response</h4>
+                        </div>
+                    </div>
+                </div>
+                <!-- end page title -->
+
+                <!-- start content-->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-xl-12">
+
+                                        <!-- start booking response details -->
+                                        <form id="responseForm" class="row mb-3">
+                                            <section id="secResponseDetails" class="row mx-0">
+                                                <div class="app-search d-flex justify-content-center">
+                                                    <div id="carSearchForm" class="col-xl-4 col-sm-6">
+                                                        <div class="input-group">
+                                                            <input type="text" class="form-control"
+                                                                   placeholder="Rent ID"
+                                                                   id="responseRentId" name="rent_Id">
+                                                            <span class="uil uil-history search-icon"></span>
+                                                            <button class="input-group-text btn-danger" type="button"
+                                                                    id="btnCancelRental">Cancel Rental
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </section>
+                                        </form>
+                                        <!-- end booking response details -->
+
+                                        <!-- start response table content-->
+                                        <div class="table-responsive-xxl table-nowrap">
+                                            <table class="table table-centered mb-0">
+                                                <thead class="btn-primary">
+                                                <tr>
+                                                    <th>Rent ID</th>
+                                                    <th>User ID</th>
+                                                    <th>Car ID</th>
+                                                    <th>Pick-Up Date</th>
+                                                    <th>Return Date</th>
+                                                    <th>Location</th>
+                                                    <th>Request Type</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody id="tblResponse">
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <!-- end response table content-->
+
+                                        <!-- start button content-->
+                                        <!--                                        <div class="mb-3 mt-3 d-grid gap-1 d-md-flex justify-content-md-center">-->
+                                        <!--                                            <button type="button" class="btn btn-danger btn" id="btnDeleteRental" style="border-radius: 0.5rem;">-->
+                                        <!--                                                Cancel Rental-->
+                                        <!--                                            </button>-->
+                                        <!--                                        </div>-->
+                                        <!-- end button content-->
+
+                                    </div>
+                                    <!-- end col-->
+                                </div>
+                                <!-- end row -->
+                            </div>
+                            <!-- end card-body -->
+                        </div>
+                        <!-- end card-->
+                    </div>
+                    <!-- end col-->
+                </div>
+                <!-- end content-->
+
+            </div>
+            <!-- End Booking Response Content-->
+
+            <!-- Start Manage Profile Content-->
+            <div class="container-fluid" id="manageProfile">
+
+                <!-- start page title -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="page-title-box">
+                            <div class="page-title-right">
+                                <ol class="breadcrumb m-0">
+                                    <li><a href="javascript: void(0);">Easy Car Rental</a></li>
+                                    <li class="uil uil-angle-right active">Manage Profile</li>
+                                </ol>
+                            </div>
+                            <h4 class="page-title">Manage Profile</h4>
+                        </div>
+                    </div>
+                </div>
+                <!-- end page title -->
+
+                <!-- start content-->
+                <div class="row">
+                    <!-- start col-->
+                    <div class="col-12">
+                        <!-- start card-->
+                        <div class="card">
+                            <!-- start card-body -->
+                            <div class="card-body">
+                                <!-- start row -->
+                                <div class="row">
+                                    <!-- start col-->
+                                    <div class="col-xl-12">
+                                        <form id="customerDetailsForm" class="row">
+                                            <section id="sec1CustomerDetails" class="col-xl-4">
+                                                <div class="mb-3">
+                                                    <label class="form-label" for="cusUserID">User ID<span
+                                                            class="text-danger">*</span></label>
+                                                    <input class="form-control" readonly id="cusUserID" name="user_Id"
+                                                           placeholder="User ID" type="text">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label class="form-label" for="userFirstName">First Name<span
+                                                            class="text-danger">*</span></label>
+                                                    <input class="form-control" id="userFirstName" name="firstName"
+                                                           placeholder="First Name" type="text">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label class="form-label" for="userLastName">Last Name<span
+                                                            class="text-danger">*</span></label>
+                                                    <input class="form-control" id="userLastName" name="lastName"
+                                                           placeholder="Last Name" type="text">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label class="form-label" for="customerContactNo">Contact
+                                                        Number<span
+                                                                class="text-danger">*</span></label>
+                                                    <input class="form-control" id="customerContactNo" name="contact_No"
+                                                           placeholder="Contact No" type="text">
+                                                </div>
+                                            </section>
+                                            <section id="sec2CustomerDetails" class="col-xl-4">
+                                                <div class="mb-3">
+                                                    <label class="form-label" for="customerAddress">Address<span
+                                                            class="text-danger">*</span></label>
+                                                    <input class="form-control" id="customerAddress" name="address"
+                                                           placeholder="Address" type="text">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label class="form-label" for="customerDriverEmail">Email<span
+                                                            class="text-danger">*</span></label>
+                                                    <input class="form-control" id="customerDriverEmail" name="email"
+                                                           placeholder="Email" type="text">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label class="form-label" for="customerNic">Nic No<span
+                                                            class="text-danger">*</span></label>
+                                                    <input class="form-control" id="customerNic" name="nic"
+                                                           placeholder="Nic No" type="text">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label class="form-label" for="imgNiC">NIC Image<span
+                                                            class="text-danger">*</span></label>
+                                                    <input class="form-control" id="imgNiC" name="nic_Img"
+                                                           placeholder="NIC NO" type="file">
+                                                </div>
+                                            </section>
+                                            <section id="sec3CustomerDetails" class="col-xl-4">
+                                                <div class="mb-3">
+                                                    <label class="form-label" for="customerLicence">Licence No<span
+                                                            class="text-danger">*</span></label>
+                                                    <input class="form-control" id="customerLicence" name="license_No"
+                                                           placeholder="Licence No" type="text">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label class="form-label" for="imgLicence">Licence Image<span
+                                                            class="text-danger">*</span></label>
+                                                    <input class="form-control" id="imgLicence" name="license_Img"
+                                                           placeholder="NIC NO" type="file">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="customerUserName" class="form-label">User Name<span
+                                                            class="text-danger">*</span></label>
+                                                    <div class="input-group has-validation">
+                                                        <span class="input-group-text"
+                                                              id="customerInputGroupPrepend">@</span>
+                                                        <input type="text" class="form-control" id="customerUserName"
+                                                               name="user_Name" placeholder="User Name"
+                                                               aria-describedby="customerInputGroupPrepend" required>
+                                                        <div class="invalid-feedback">
+                                                            Please choose a username.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="customerPassword" class="form-label">Password<span
+                                                            class="text-danger">*</span></label>
+                                                    <div class="input-group input-group-merge">
+                                                        <input type="password" id="customerPassword" name="password"
+                                                               class="form-control" placeholder="Password">
+                                                        <div class="input-group-text" data-password="false">
+                                                            <span class="uil uil-eye-slash"></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3 d-grid gap-1 d-md-flex justify-content-md-end">
+                                                    <button type="button" class="btn btn-primary btn me-md-1"
+                                                            id="updateCustomer">
+                                                        Update
+                                                    </button>
+                                                </div>
+                                            </section>
+                                        </form>
+                                    </div>
+                                    <!-- end col-->
+                                </div>
+                                <!-- end row -->
+                            </div>
+                            <!-- end card-body -->
+                        </div>
+                        <!-- end card-->
+                    </div>
+                    <!-- end col-->
+                </div>
+                <!-- end content-->
+
+            </div>
+            <!-- End Manage Profile Content-->
+
+            <!-- Start Payment Content-->
+            <div class="container-fluid" id="customerPayment">
+
+                <!-- start page title -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="page-title-box">
+                            <div class="page-title-right">
+                                <ol class="breadcrumb m-0">
+                                    <li><a href="javascript: void(0);">Easy Car Rental</a></li>
+                                    <li class="uil uil-angle-right active">Payment</li>
+                                </ol>
+                            </div>
+                            <h4 class="page-title">Payment</h4>
+                        </div>
+                    </div>
+                </div>
+                <!-- end page title -->
+
+                <!-- start content-->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-xl-12">
+
+                                        <div class="table-responsive-xxl table-nowrap">
+                                            <table class="table table-centered mb-0">
+                                                <thead class="btn-primary">
+                                                <tr>
+                                                    <th>Payment ID</th>
+                                                    <th>Date</th>
+                                                    <th>Amount (Rs.)</th>
+                                                    <th>Rent ID</th>
+                                                    <th>Customer ID</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody id="tblPayments">
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+
+                                    </div>
+                                    <!-- end col-->
+                                </div>
+                                <!-- end row -->
+                            </div>
+                            <!-- end card-body -->
+                        </div>
+                        <!-- end card-->
+                    </div>
+                    <!-- end col-->
+                </div>
+                <!-- end content-->
+
+            </div>
+            <!-- End Payment Content-->
+
+            <!-- Start Footer Content -->
+            <footer class="footer">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <script>document.write(new Date().getFullYear())</script> © Pasan Pahasara
+                        </div>
+                        <div class="col-md-6">
+                            <div class="text-md-end footer-links d-none d-md-block">
+                                <a href="javascript: void(0);">About</a>
+                                <a href="javascript: void(0);">Support</a>
+                                <a href="javascript: void(0);">Contact Us</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <!-- End Footer Content -->
+
+        </div>
+        <!-- end content-->
+    </div>
+    <!-- End Page Content here -->
+</section>
+<!-- End Sidebar Wrapper-->
+
+<!-- Bundle -->
+<script src="../assets/js/vendor/vendor.min.js"></script>
+<script src="../assets/js/vendor/app.min.js"></script>
+
+<!-- Icons -->
+<script src="https://code.iconify.design/iconify-icon/1.0.5/iconify-icon.min.js"></script>
+
+<!-- jQuery -->
+<script src="../assets/jQuery/jquery-3.6.0.min.js"></script>
+<script src="../controller/rentController.js"></script>
+<script>
+    let currentBaseUrl = "http://localhost:8080/Back_End_war/";
+
+    loadBookingResponseToCustomers();
+    loadCustomerPaymentDetails();
+    let user;
+    //<!------------------------------------ Navigations ------------------------------------>
+
+    //<!-- Start Document Ready Navigation -->
+    $(function () {
+        $("#bookingRequest").css("display", "none");
+        $("#bookingResponse").css("display", "block");
+        $("#manageProfile").css("display", "none");
+        $("#customerPayment").css("display", "none");
+    });
+    <!-- End Document Ready Navigation -->
+
+    <!-- Start Booking Request Navigation -->
+    $("#LinkBookingRequest").on('click', function () {
+        $("#bookingRequest").css("display", "block");
+        $("#bookingResponse").css("display", "none");
+        $("#manageProfile").css("display", "none");
+        $("#customerPayment").css("display", "none");
+    });
+    <!-- End Booking Request Navigation -->
+
+    <!-- Start Booking Response Navigation -->
+    $("#LinkBookingResponse").on('click', function () {
+        $("#bookingRequest").css("display", "none");
+        $("#bookingResponse").css("display", "block");
+        $("#manageProfile").css("display", "none");
+        $("#customerPayment").css("display", "none");
+    });
+    <!-- End Booking Response Navigation -->
+
+    <!-- Start Manage Profile Navigation -->
+    $("#LinkManageProfile").on('click', function () {
+        $("#bookingRequest").css("display", "none");
+        $("#bookingResponse").css("display", "none");
+        $("#manageProfile").css("display", "block");
+        $("#customerPayment").css("display", "none");
+    });
+    <!-- End Manage Profile Navigation -->
+
+    <!-- Start Customer Payment Navigation -->
+    $("#LinkCustomerPayment").on('click', function () {
+        $("#bookingRequest").css("display", "none");
+        $("#bookingResponse").css("display", "none");
+        $("#manageProfile").css("display", "none");
+        $("#customerPayment").css("display", "block");
+    });
+    <!-- End Customer Payment Navigation -->
+
+    //<!------------------------------------ Get Login User Id ------------------------------------------------>
+
+    $.ajax({
+        url: currentBaseUrl + "user/current",
+        method: "get",
+        success: function (res) {
+            user = res.data.user_Id;
+            $("#userID").val(res.data.user_Id);
+            console.log(user);
+        }
+    });
+
+    //<!------------------------------------ Booking Request -------------------------------------------->
+
+    <!-- start load booking response to customers function -->
+    function loadBookingResponseToCustomers() {
+        $("#tblResponse").empty();
+        $.ajax({
+            url: currentBaseUrl + "rent",
+            method: "GET",
+            contentType: "application/json",
+            dataType: "json",
+            success: function (res) {
+                for (var customer of res.data) {
+                    if (user === customer.regUser.user_Id) {
+                        $("#tblResponse").append(`<tr><td>${customer.rentID}</td><td>${customer.regUser.user_Id}</td><td>${customer.rentDetails.at(carID).carID}</td><td>${customer.pickUpDate}</td><td>${customer.returnDate}</td><td>${customer.location}</td><td>${customer.rentType}</td>`);
+                        cusRentBindClickEvents();
+                    }
+                }
+            },
+            error: function (error) {
+                let message = JSON.parse(error.responseText).message;
+                alert(message);
+            }
+        });
+    }
+    <!-- end load booking response to customers function -->
+
+    <!-- start cusRentBindClickEvents function -->
+    function cusRentBindClickEvents() {
+        $("#tblResponse>tr").on('click', function () {
+            $("#responseRentId").val($(this).children().eq(0).text());
+        });
+    }
+    <!-- end cusRentBindClickEvents function -->
+
+    <!-- start set text fields values function -->
+    function setTextFieldValuesRentId(rentId) {
+        $("#responseRentId").val(rentId);
+    }
+    <!-- end set text fields values function -->
+
+    <!-- start cancel rental button -->
+    $("#btnCancelRental").on('click', function () {
+        let id = $("#responseRentId").val();
+        $.ajax({
+            url: currentBaseUrl + "rent?rentID=" + id,
+            method: "DELETE",
+            contentType: "application/json",
+            dataType: "json",
+            success: function (res) {
+                loadBookingResponseToCustomers();
+                alert(res.message);
+                setTextFieldValuesRentId("");
+            },
+            error: function (error) {
+                let message = JSON.parse(error.responseText).message;
+                alert(message);
+            }
+        });
+    });
+    <!-- end cancel rental button -->
+
+    //<!------------------------------------ Manage Profile --------------------------------------------->
+
+    <!-- start customer update -->
+    $("#updateCustomer").on('click', function () {
+        let formData = new FormData($("#customerDetailsForm")[0]);
+        console.log(formData);
+        $.ajax({
+            url: currentBaseUrl + "customer/update",
+            method: "post",
+            data: formData,
+            contentType: false,
+            processData: false,
+            dataType: "json",
+            success: function (res) {
+                alert(res.message);
+                // manageCustomerLoadTable();
+            }, error: function (error) {
+                let message = JSON.parse(error.responseText).message;
+                alert(message);
+            }
+        });
+    });
+    <!-- end customer update -->
+
+    <!-- start customers values to text fields -->
+    $.ajax({
+        url: currentBaseUrl + "customer",
+        method: "get",
+        contentType: "application/json",
+        dataType: "json",
+        success: function (res) {
+            for (var cus of res.data) {
+                if (user === cus.user_Id) {
+                    $("#cusUserID").val(cus.user_Id);
+                    $("#userFirstName").val(cus.name.firstName);
+                    $("#userLastName").val(cus.name.lastName);
+                    $("#customerContactNo").val(cus.contact_No);
+                    $("#customerAddress").val(cus.address);
+                    $("#customerDriverEmail").val(cus.email);
+                    $("#customerNic").val(cus.nic);
+                    $("#imgNiC").val(cus.nic_Img);
+                    $("#customerLicence").val(cus.license_No);
+                    $("#imgLicence").val(cus.license_Img);
+                    $("#customerUserName").val(cus.user.user_Name);
+                    $("#customerPassword").val(cus.user.password);
+                    customer = res.data;
+                }
+            }
+        }
+    });
+    <!-- end customers values to text fields -->
+
+    //<!------------------------------------ Customer Payment Details ------------------------------------>
+
+    <!-- Start Customer Payment Details get function -->
+    function loadCustomerPaymentDetails() {
+        $("#tblPayments").empty();
+        $.ajax({
+            method: "GET",
+            url: currentBaseUrl + "payment",
+            contentType: "application/json",
+            dataType: "json",
+            success: function (res) {
+                for (var payment of res.data) {
+                    if (user === payment.rentID.regUser.user.user_Id) {
+                        $("#tblPayments").append(`<tr><td>${payment.paymentID}</td><td>${payment.date}</td><td>${payment.total}</td><td>${payment.rentID.rentID}</td><td>${payment.rentID.regUser.user.user_Id}</td></tr>`);
+                    }
+                }
+            },
+            error: function (error) {
+                let message = JSON.parse(error.responseText).message;
+                alert(message);
+            }
+        });
+    }
+    <!-- End Customer Payment Details get function -->
+
+</script>
+</body>
+</html>
